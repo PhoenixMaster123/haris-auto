@@ -24,12 +24,27 @@
   padding: 28px 24px;
   overflow: hidden;
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
-    background 0.3s var(--ease);
+    background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+/* accent bar that wipes in along the top edge on hover */
+.whyCard::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--acc-bright), var(--acc-deep));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s var(--ease);
 }
 .whyCard:hover {
   transform: translateY(-6px);
   background: var(--card);
   box-shadow: var(--sh-2);
+  border-color: transparent;
+}
+.whyCard:hover::before {
+  transform: scaleX(1);
 }
 .whyIcon {
   width: 52px;
@@ -41,19 +56,35 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  transition: transform 0.35s var(--ease), background 0.35s var(--ease),
+    color 0.35s var(--ease);
+}
+.whyCard:hover .whyIcon {
+  background: var(--acc);
+  color: var(--acc-ink);
+  transform: scale(1.06) rotate(-4deg);
 }
 .whyNum {
   position: absolute;
-  top: 22px;
+  top: 20px;
   right: 22px;
   font-family: var(--f-disp);
   font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--paper-3);
+  font-size: 1.7rem;
+  color: var(--acc-deep);
+  opacity: 0.7;
+  transition: color 0.3s var(--ease), opacity 0.3s var(--ease);
 }
 .whyCard:hover .whyNum {
   color: var(--acc);
-  opacity: 0.3;
+  opacity: 1;
+}
+:root[data-theme="dark"] .whyNum {
+  color: var(--acc-bright);
+  opacity: 0.62;
+}
+:root[data-theme="dark"] .whyCard:hover .whyNum {
+  opacity: 1;
 }
 .whyTitle {
   font-family: var(--f-disp);
@@ -71,7 +102,9 @@
 
 /* ---- STATS band ---- */
 .statsBand {
-  background: linear-gradient(120deg, var(--ink), var(--ink-3));
+  background: linear-gradient(120deg, var(--paper-2), var(--paper-3));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   padding: 56px 0;
 }
 .statsInner {
@@ -81,7 +114,7 @@
 }
 .statBlock {
   text-align: center;
-  border-right: 1px solid var(--line-dark);
+  border-right: 1px solid var(--line);
 }
 .statBlock:last-child {
   border-right: none;
@@ -93,7 +126,7 @@
   font-size: clamp(2.4rem, 1.8rem + 2.4vw, 3.4rem);
   line-height: 1;
   letter-spacing: -0.02em;
-  background: linear-gradient(100deg, #fff, var(--acc-bright));
+  background: linear-gradient(100deg, var(--acc-deep), var(--acc));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -102,6 +135,21 @@
   display: block;
   margin-top: 8px;
   font-size: 0.9rem;
+  color: var(--t-2);
+}
+
+/* dark mode keeps the stats as a dark feature band */
+:root[data-theme="dark"] .statsBand {
+  background: linear-gradient(120deg, var(--ink), var(--ink-3));
+  border-color: var(--line-dark);
+}
+:root[data-theme="dark"] .statBlock {
+  border-right-color: var(--line-dark);
+}
+:root[data-theme="dark"] .statBig {
+  background-image: linear-gradient(100deg, #fff, var(--acc-bright));
+}
+:root[data-theme="dark"] .statLbl {
   color: var(--t-on-dark-3);
 }
 
@@ -136,14 +184,20 @@
 /* ---- testimonials ---- */
 .testiSection {
   padding: 92px 0;
-  background: linear-gradient(160deg, var(--ink), #0a1417);
+  background: radial-gradient(
+      900px 460px at 50% 0%,
+      rgba(20, 184, 198, 0.07),
+      transparent 70%
+    ),
+    linear-gradient(180deg, var(--paper-2), var(--paper));
 }
 .testiCard {
   position: relative;
   max-width: 760px;
   margin: 44px auto 0;
-  background: var(--ink-2);
-  border: 1px solid var(--line-dark);
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-1);
   border-radius: 28px;
   padding: 48px 44px 32px;
   text-align: center;
@@ -157,7 +211,7 @@
   font-weight: 500;
   font-size: clamp(1.3rem, 1rem + 1.2vw, 1.7rem);
   line-height: 1.4;
-  color: #fff;
+  color: var(--t-1);
   margin: 8px 0 30px;
 }
 .testiWho {
@@ -180,13 +234,13 @@
 }
 .testiWho strong {
   display: block;
-  color: #fff;
+  color: var(--t-1);
   font-size: 1rem;
   text-align: left;
 }
 .testiWho span {
   display: block;
-  color: var(--t-on-dark-3);
+  color: var(--t-2);
   font-size: 0.85rem;
   text-align: left;
 }
@@ -203,9 +257,9 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--line-dark);
+  border: 1px solid var(--line);
   background: transparent;
-  color: #fff;
+  color: var(--t-1);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -228,12 +282,12 @@
   padding: 0;
   border: none;
   border-radius: var(--r-pill);
-  background: rgba(255, 255, 255, 0.32);
+  background: rgba(14, 15, 18, 0.18);
   cursor: pointer;
   transition: width 0.3s var(--ease), background 0.3s var(--ease);
 }
 .dot:hover {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(14, 15, 18, 0.35);
 }
 .dotOn {
   width: 26px;
@@ -241,6 +295,33 @@
 }
 .dotOn:hover {
   background: var(--acc);
+}
+
+/* dark mode keeps the testimonials as a dark showcase band */
+:root[data-theme="dark"] .testiSection {
+  background: linear-gradient(160deg, var(--ink), #0a1417);
+}
+:root[data-theme="dark"] .testiCard {
+  background: var(--ink-2);
+  border-color: var(--line-dark);
+  box-shadow: none;
+}
+:root[data-theme="dark"] .testiText,
+:root[data-theme="dark"] .testiWho strong {
+  color: #fff;
+}
+:root[data-theme="dark"] .testiWho span {
+  color: var(--t-on-dark-3);
+}
+:root[data-theme="dark"] .testiNav > button {
+  border-color: var(--line-dark);
+  color: #fff;
+}
+:root[data-theme="dark"] .dot {
+  background: rgba(255, 255, 255, 0.32);
+}
+:root[data-theme="dark"] .dot:hover {
+  background: rgba(255, 255, 255, 0.55);
 }
 
 /* ---- brands ---- */

@@ -4,6 +4,7 @@ import { useI18n } from "../hooks/useI18n";
 import { Icon } from "./Icon";
 import { LanguageMenu } from "./LanguageMenu";
 import { ThemeToggle } from "./ThemeToggle";
+import { OpenStatus } from "./OpenStatus";
 import { Logo } from "./Logo";
 import styles from "./Navbar.module.css";
 
@@ -58,6 +59,7 @@ export function Navbar({ page, onNavigate }: Props) {
 
           <div className={styles.right}>
             <div className={styles.toolsDesk}>
+              <OpenStatus compact />
               <ThemeToggle />
               <LanguageMenu />
             </div>
@@ -102,6 +104,9 @@ export function Navbar({ page, onNavigate }: Props) {
                 <Icon name="arrow_outward" size={22} />
               </button>
             ))}
+            <div className={styles.sheetStatus}>
+              <OpenStatus />
+            </div>
             <div className={styles.sheetLang}>
               <ThemeToggle variant="dark" />
               <LanguageMenu variant="dark" />

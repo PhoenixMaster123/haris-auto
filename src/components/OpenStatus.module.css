@@ -1,0 +1,50 @@
+/* Neutral, translucent styling so the badge reads correctly on both the
+   light header and the always-dark footer. Status colour comes from the dot. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 0.8rem;
+  line-height: 1;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(128, 128, 128, 0.32);
+  background: rgba(128, 128, 128, 0.12);
+  white-space: nowrap;
+  color: inherit;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.open .dot {
+  background: #18b663;
+  box-shadow: 0 0 0 0 rgba(24, 182, 99, 0.5);
+  animation: openPulse 2.2s infinite;
+}
+.closed .dot {
+  background: #e05a45;
+}
+.open .label {
+  color: #16a85c;
+}
+.detail {
+  font-weight: 600;
+  opacity: 0.66;
+}
+
+@keyframes openPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(24, 182, 99, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(24, 182, 99, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(24, 182, 99, 0);
+  }
+}

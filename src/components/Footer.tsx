@@ -3,6 +3,7 @@ import { useI18n } from "../hooks/useI18n";
 import { PHONE_TEL } from "../data";
 import { Icon } from "./Icon";
 import { Logo } from "./Logo";
+import { OpenStatus } from "./OpenStatus";
 import styles from "./Footer.module.css";
 
 interface Props {
@@ -69,6 +70,9 @@ export function Footer({ onNavigate }: Props) {
 
         <div className={styles.col}>
           <h4 className={styles.colTitle}>{t.footer.hoursL}</h4>
+          <div className={styles.statusRow}>
+            <OpenStatus />
+          </div>
           <ul className={styles.list}>
             {t.footer.hours.map((h) => (
               <li key={h} className={styles.hours}>

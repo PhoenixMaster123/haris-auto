@@ -42,6 +42,9 @@ export interface Strings {
   galp: { kicker: string; title: string; sub: string; view: string };
   cta: { title: string; sub: string; btn: string; call: string };
   mapTitle: string;
+  mapDirections: string;
+  promo: string;
+  status: { open: string; closed: string; until: string; opens: string };
   services: {
     title: string;
     sub: string;

@@ -6,6 +6,8 @@ import { CtaBand } from "../components/Shared";
 import { Icon } from "../components/Icon";
 import styles from "./About.module.css";
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export function About({ onNavigate }: { onNavigate: (p: PageId) => void }) {
   const { t } = useI18n();
   const ref = useReveal<HTMLDivElement>();
@@ -25,8 +27,9 @@ export function About({ onNavigate }: { onNavigate: (p: PageId) => void }) {
             <div
               className={styles.storyImg}
               style={{
-                background:
-                  "radial-gradient(120% 120% at 70% 20%, rgba(20,184,198,.4), transparent 60%), linear-gradient(135deg,#0b0c0f,#163039 70%,#0891b2)",
+                backgroundImage: `linear-gradient(180deg, rgba(11,12,15,0.15) 0%, rgba(11,12,15,0.72) 100%), url(${asset("/media/car-done.jpg")})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             >
               <div className={styles.storyStat}>

@@ -1,10 +1,38 @@
 /* ---- map ---- */
 .mapWrap {
+  position: relative;
   border-radius: var(--r-lg);
   overflow: hidden;
   border: 1px solid var(--line);
   box-shadow: var(--sh-1);
   background: var(--paper-2);
+}
+.directions {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--t-1);
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 10px 16px;
+  border-radius: var(--r-pill);
+  box-shadow: var(--sh-2);
+  text-decoration: none;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.directions:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sh-acc);
+}
+.directions .material-symbols-outlined {
+  color: var(--acc-deep);
 }
 .map {
   width: 100%;
@@ -22,7 +50,9 @@
 .ctaInner {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(120deg, var(--ink), var(--ink-3));
+  background: linear-gradient(120deg, var(--paper-2), var(--paper));
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-1);
   border-radius: 28px;
   padding: 56px 56px;
   display: flex;
@@ -56,11 +86,11 @@
   font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem);
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--t-1);
   margin: 0;
 }
 .ctaSub {
-  color: var(--t-on-dark-2);
+  color: var(--t-2);
   font-size: 1.05rem;
   margin: 14px 0 0;
 }
@@ -69,6 +99,36 @@
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+}
+/* the "call" ghost button needs ink colours on the light band */
+.ctaInner :global(.btn--ghost) {
+  color: var(--t-1);
+  border-color: var(--line);
+}
+.ctaInner :global(.btn--ghost):hover {
+  background: var(--paper-3);
+  border-color: var(--t-1);
+}
+
+/* dark mode keeps the CTA as a dark feature band */
+:root[data-theme="dark"] .ctaInner {
+  background: linear-gradient(120deg, var(--ink), var(--ink-3));
+  border-color: var(--line-dark);
+  box-shadow: none;
+}
+:root[data-theme="dark"] .ctaTitle {
+  color: #fff;
+}
+:root[data-theme="dark"] .ctaSub {
+  color: var(--t-on-dark-2);
+}
+:root[data-theme="dark"] .ctaInner :global(.btn--ghost) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.28);
+}
+:root[data-theme="dark"] .ctaInner :global(.btn--ghost):hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* ---- before / after ---- */

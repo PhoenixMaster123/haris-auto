@@ -33,7 +33,11 @@ export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
       <Hero onNavigate={onNavigate} />
 
       {/* WHY */}
-      <section className={styles.section}>
+      <section
+        id="why"
+        className={styles.section}
+        style={{ scrollMarginTop: "var(--nav-h)" }}
+      >
         <div className="wrap">
           <SectionHead
             eyebrow={t.why.kicker}
@@ -123,7 +127,6 @@ export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
             eyebrow={t.testi.kicker}
             title={t.testi.title}
             center
-            onDark
           />
           <div className={`${styles.testiCard} reveal`}>
             <Icon name="format_quote" size={48} className={styles.quoteMark} />

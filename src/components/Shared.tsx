@@ -6,11 +6,16 @@ import styles from "./Shared.module.css";
 
 /** Google Maps embed pointing at the exact business address. */
 export function MapEmbed({ title }: { title: string }) {
+  const { t } = useI18n();
   // Exact pin: ул. „Мария Луиза“ 2, 7012 Русе (no API key required).
+  const address = 'ул. "Мария Луиза" 2, 7012 Русе, България';
   const src =
     "https://www.google.com/maps?q=" +
-    encodeURIComponent('ул. "Мария Луиза" 2, 7012 Русе, България') +
+    encodeURIComponent(address) +
     "&output=embed&z=17";
+  const directions =
+    "https://www.google.com/maps/dir/?api=1&destination=" +
+    encodeURIComponent(address);
   return (
     <div className={styles.mapWrap}>
       <iframe
@@ -20,6 +25,15 @@ export function MapEmbed({ title }: { title: string }) {
         referrerPolicy="no-referrer-when-downgrade"
         className={styles.map}
       />
+      <a
+        className={styles.directions}
+        href={directions}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon name="directions" size={18} />
+        {t.mapDirections}
+      </a>
     </div>
   );
 }

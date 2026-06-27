@@ -12,7 +12,7 @@ export const en: Strings = {
     book: "Book now",
   },
   hero: {
-    kicker: "Auto complex • Ruse • since 2003",
+    kicker: "Haris Auto Complex • Ruse • since 2003",
     titleA: "Premium care",
     titleB: "for your car",
     sub: "Car wash, machine carpet cleaning, detailing and a full auto service — all in one place. Over 20 years of precision, trust and shine.",
@@ -66,6 +66,9 @@ export const en: Strings = {
     call: "Call us: +359 89 687 7995",
   },
   mapTitle: "Find us",
+  mapDirections: "Get directions",
+  promo: "Free pickup & delivery on machine carpet cleaning",
+  status: { open: "Open now", closed: "Closed", until: "until", opens: "opens" },
   services: {
     title: "Our services",
     sub: "Complete care for your car — from washing to service, under one roof.",
@@ -144,7 +147,7 @@ export const en: Strings = {
     hours: [
       "Monday – Friday: 08:00 – 19:00",
       "Saturday: 08:00 – 17:00",
-      "Sunday: Closed",
+      "Sunday: 08:00 – 17:00",
     ],
     socialT: "Follow us",
     emergencyT: "Emergency roadside",
@@ -179,7 +182,7 @@ export const en: Strings = {
     hours: [
       "Mon – Fri: 08:00 – 19:00",
       "Saturday: 08:00 – 17:00",
-      "Sunday: Closed",
+      "Sunday: 08:00 – 17:00",
     ],
     rights: "All rights reserved.",
     privacy: "Privacy",

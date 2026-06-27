@@ -109,9 +109,13 @@
   font-family: var(--f-disp);
   font-weight: 800;
   font-size: 2.4rem;
-  color: var(--acc);
-  opacity: 0.25;
+  color: var(--acc-deep);
+  opacity: 0.62;
   line-height: 1;
+}
+:root[data-theme="dark"] .valueNum {
+  color: var(--acc-bright);
+  opacity: 0.55;
 }
 .valueCard h3 {
   font-family: var(--f-disp);

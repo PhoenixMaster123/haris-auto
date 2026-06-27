@@ -4,9 +4,12 @@ import { useEffect, useRef } from "react";
  * Adds the `.in` class to any descendant carrying `.reveal`
  * when it scrolls into view. Returns a ref to attach to a container.
  *
- * Safety: a fallback timer reveals anything still hidden, so a missed
- * observer callback (or an unsupported browser) can never leave content
- * permanently invisible.
+ * Robustness:
+ *  - A MutationObserver re-scans whenever nodes are added, so content
+ *    that remounts (e.g. cards re-keyed on a language switch) is picked
+ *    up and revealed instead of being left permanently hidden.
+ *  - A fallback timer reveals anything still hidden, so a missed observer
+ *    callback (or an unsupported browser) can never hide content.
  */
 export function useReveal<T extends HTMLElement = HTMLElement>() {
   const ref = useRef<T>(null);
@@ -18,37 +21,42 @@ export function useReveal<T extends HTMLElement = HTMLElement>() {
     const collect = () =>
       Array.from(root.querySelectorAll<HTMLElement>(".reveal:not(.in)"));
 
-    const targets = collect();
-    if (targets.length === 0) return;
+    const noIO = typeof IntersectionObserver === "undefined";
 
-    // No IO support -> show everything immediately.
-    if (typeof IntersectionObserver === "undefined") {
-      targets.forEach((el) => el.classList.add("in"));
-      return;
-    }
+    const io = noIO
+      ? null
+      : new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                (e.target as HTMLElement).classList.add("in");
+                io!.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
+        );
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            (e.target as HTMLElement).classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -6% 0px" },
-    );
-
-    targets.forEach((el) => io.observe(el));
-
-    // Reveal anything already in/near the viewport on first paint.
-    const revealVisible = () => {
+    // Reveal anything already in view, observe the rest. Safe to call
+    // repeatedly — already-revealed nodes are skipped by the selector.
+    const scan = () => {
       collect().forEach((el) => {
+        if (noIO) {
+          el.classList.add("in");
+          return;
+        }
         const r = el.getBoundingClientRect();
         if (r.top < window.innerHeight * 0.95) el.classList.add("in");
+        else io!.observe(el);
       });
     };
-    requestAnimationFrame(revealVisible);
+
+    scan();
+    requestAnimationFrame(scan);
+
+    // Re-scan when the subtree changes (e.g. a language switch remounts nodes).
+    const mo = new MutationObserver(scan);
+    mo.observe(root, { childList: true, subtree: true });
 
     // Fallback: never let content stay hidden.
     const fallback = window.setTimeout(() => {
@@ -56,7 +64,8 @@ export function useReveal<T extends HTMLElement = HTMLElement>() {
     }, 2500);
 
     return () => {
-      io.disconnect();
+      io?.disconnect();
+      mo.disconnect();
       window.clearTimeout(fallback);
     };
   }, []);

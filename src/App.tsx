@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { PageId } from "./types";
 import { ThemeProvider } from "./hooks/useTheme";
 import { I18nProvider } from "./hooks/useI18n";
+import { PromoBanner } from "./components/PromoBanner";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
@@ -26,6 +27,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <I18nProvider>
+        <PromoBanner onNavigate={navigate} />
         <Navbar page={page} onNavigate={navigate} />
         <main>
           {page === "home" && <Home onNavigate={navigate} />}

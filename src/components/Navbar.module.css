@@ -175,8 +175,11 @@
 .sheetLink .material-symbols-outlined {
   color: var(--t-on-dark-3);
 }
-.sheetLang {
+.sheetStatus {
   margin-top: 22px;
+}
+.sheetLang {
+  margin-top: 18px;
   display: flex;
   align-items: center;
   gap: 12px;

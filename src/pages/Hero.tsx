@@ -11,6 +11,7 @@ export function Hero({ onNavigate }: { onNavigate: (p: PageId) => void }) {
   return (
     <section className={styles.hero}>
       <div className={styles.glow} aria-hidden="true" />
+      <div className={styles.aurora} aria-hidden="true" />
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.copy}>
           <span className={styles.kicker}>
@@ -81,7 +82,9 @@ export function Hero({ onNavigate }: { onNavigate: (p: PageId) => void }) {
       <button
         className={styles.scroll}
         onClick={() =>
-          window.scrollTo({ top: window.innerHeight * 0.86, behavior: "smooth" })
+          document
+            .getElementById("why")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" })
         }
       >
         {t.hero.scroll}

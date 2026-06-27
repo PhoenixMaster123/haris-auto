@@ -18,6 +18,67 @@ export const PHONE_DISPLAY = "+359 89 687 7995";
 export const PHONE_TEL = "+359896877995";
 export const EMAIL = "avtokomfort@abv.bg";
 
+// ---- Opening hours --------------------------------------------
+/**
+ * Open/close in 24h time, indexed by JS weekday (0=Sun … 6=Sat).
+ * Source of truth for the live "Open now / Closed" badge. The shop is
+ * in Ruse, so the status is always computed in Europe/Sofia time,
+ * regardless of where the visitor is.
+ */
+export const OPENING_HOURS: { open: number; close: number }[] = [
+  { open: 8, close: 17 }, // Sun
+  { open: 8, close: 19 }, // Mon
+  { open: 8, close: 19 }, // Tue
+  { open: 8, close: 19 }, // Wed
+  { open: 8, close: 19 }, // Thu
+  { open: 8, close: 19 }, // Fri
+  { open: 8, close: 17 }, // Sat
+];
+
+export interface OpenState {
+  open: boolean;
+  /** "HH:MM" — when it next closes (if open) or next opens (if closed). */
+  time: string;
+}
+
+const pad = (n: number) => String(n).padStart(2, "0");
+const hhmm = (mins: number) => `${pad(Math.floor(mins / 60) % 24)}:${pad(mins % 60)}`;
+
+/** Current weekday + minutes-since-midnight in the shop's timezone. */
+function sofiaNow(): { day: number; minutes: number } {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Sofia",
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date());
+  const val = (type: string) => parts.find((p) => p.type === type)?.value ?? "";
+  const days: Record<string, number> = {
+    Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6,
+  };
+  return {
+    day: days[val("weekday")] ?? new Date().getDay(),
+    minutes: Number(val("hour")) * 60 + Number(val("minute")),
+  };
+}
+
+/** Whether the complex is open right now, plus the relevant next time. */
+export function getOpenStatus(): OpenState {
+  const { day, minutes } = sofiaNow();
+  const today = OPENING_HOURS[day];
+  if (today && minutes >= today.open * 60 && minutes < today.close * 60) {
+    return { open: true, time: hhmm(today.close * 60) };
+  }
+  // Walk forward to the next opening (today if we're still before opening).
+  for (let i = 0; i < 8; i++) {
+    const h = OPENING_HOURS[(day + i) % 7];
+    if (!h) continue;
+    if (i > 0 || minutes < h.open * 60) return { open: false, time: hhmm(h.open * 60) };
+  }
+  return { open: false, time: "" };
+}
+
 // ---- Service categories ----------------------------------------
 export const categories: Record<Lang, string>[] = [
   L("Автомивка", "Car Wash", "Spălătorie auto", "Autowäsche"),

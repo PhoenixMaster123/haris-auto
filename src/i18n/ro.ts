@@ -12,7 +12,7 @@ export const ro: Strings = {
     book: "Programează-te",
   },
   hero: {
-    kicker: "Complex auto • Ruse • din 2003",
+    kicker: "Complex auto Haris • Ruse • din 2003",
     titleA: "Îngrijire premium",
     titleB: "pentru mașina ta",
     sub: "Spălătorie auto, curățare mecanică a covoarelor, detailing și service auto complet — totul într-un singur loc. Peste 20 de ani de precizie, încredere și strălucire.",
@@ -66,6 +66,9 @@ export const ro: Strings = {
     call: "Sună-ne: +359 89 687 7995",
   },
   mapTitle: "Găsește-ne",
+  mapDirections: "Obține direcții",
+  promo: "Preluare și livrare gratuite la spălarea mecanică a covoarelor",
+  status: { open: "Deschis acum", closed: "Închis", until: "până la", opens: "deschide la" },
   services: {
     title: "Serviciile noastre",
     sub: "Îngrijire completă pentru mașina ta — de la spălare la service, sub același acoperiș.",
@@ -144,7 +147,7 @@ export const ro: Strings = {
     hours: [
       "Luni – Vineri: 08:00 – 19:00",
       "Sâmbătă: 08:00 – 17:00",
-      "Duminică: Închis",
+      "Duminică: 08:00 – 17:00",
     ],
     socialT: "Urmărește-ne",
     emergencyT: "Asistență rutieră de urgență",
@@ -179,7 +182,7 @@ export const ro: Strings = {
     hours: [
       "Lun – Vin: 08:00 – 19:00",
       "Sâmbătă: 08:00 – 17:00",
-      "Duminică: Închis",
+      "Duminică: 08:00 – 17:00",
     ],
     rights: "Toate drepturile rezervate.",
     privacy: "Confidențialitate",

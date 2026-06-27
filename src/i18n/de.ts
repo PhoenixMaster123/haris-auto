@@ -12,7 +12,7 @@ export const de: Strings = {
     book: "Termin buchen",
   },
   hero: {
-    kicker: "Autokomplex • Ruse • seit 2003",
+    kicker: "Autokomplex Haris • Ruse • seit 2003",
     titleA: "Premium-Pflege",
     titleB: "für Ihr Auto",
     sub: "Autowäsche, maschinelle Teppichreinigung, Detailing und ein kompletter Autoservice — alles an einem Ort. Über 20 Jahre Präzision, Vertrauen und Glanz.",
@@ -66,6 +66,9 @@ export const de: Strings = {
     call: "Rufen Sie uns an: +359 89 687 7995",
   },
   mapTitle: "So finden Sie uns",
+  mapDirections: "Route planen",
+  promo: "Kostenlose Abholung & Lieferung bei maschineller Teppichreinigung",
+  status: { open: "Jetzt geöffnet", closed: "Geschlossen", until: "bis", opens: "öffnet um" },
   services: {
     title: "Unsere Leistungen",
     sub: "Komplette Pflege für Ihr Auto — von der Wäsche bis zum Service, unter einem Dach.",
@@ -144,7 +147,7 @@ export const de: Strings = {
     hours: [
       "Montag – Freitag: 08:00 – 19:00",
       "Samstag: 08:00 – 17:00",
-      "Sonntag: Geschlossen",
+      "Sonntag: 08:00 – 17:00",
     ],
     socialT: "Folgen Sie uns",
     emergencyT: "Pannenhilfe",
@@ -179,7 +182,7 @@ export const de: Strings = {
     hours: [
       "Mo – Fr: 08:00 – 19:00",
       "Samstag: 08:00 – 17:00",
-      "Sonntag: Geschlossen",
+      "Sonntag: 08:00 – 17:00",
     ],
     rights: "Alle Rechte vorbehalten.",
     privacy: "Datenschutz",
