@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { PageId } from "./types";
 import { ThemeProvider } from "./hooks/useTheme";
 import { I18nProvider } from "./hooks/useI18n";
+import { Seo } from "./components/Seo";
 import { PromoBanner } from "./components/PromoBanner";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -27,6 +28,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <I18nProvider>
+        <Seo page={page} />
         <PromoBanner onNavigate={navigate} />
         <Navbar page={page} onNavigate={navigate} />
         <main>

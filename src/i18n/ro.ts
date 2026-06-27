@@ -69,6 +69,11 @@ export const ro: Strings = {
   mapDirections: "Obține direcții",
   promo: "Preluare și livrare gratuite la spălarea mecanică a covoarelor",
   status: { open: "Deschis acum", closed: "Închis", until: "până la", opens: "deschide la" },
+  seo: {
+    siteName: "Complex Auto Haris",
+    tagline:
+      "Spălătorie auto, curățare mecanică covoare, detailing și service în Ruse",
+  },
   services: {
     title: "Serviciile noastre",
     sub: "Îngrijire completă pentru mașina ta — de la spălare la service, sub același acoperiș.",

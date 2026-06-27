@@ -1,6 +1,6 @@
 import type { PageId } from "../types";
 import { useI18n } from "../hooks/useI18n";
-import { PHONE_TEL } from "../data";
+import { PHONE_TEL, FACEBOOK_URL } from "../data";
 import { Icon } from "./Icon";
 import { Logo } from "./Logo";
 import { OpenStatus } from "./OpenStatus";
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const SOCIALS = [
-  { icon: "public", label: "Facebook", href: "#" },
+  { icon: "public", label: "Facebook", href: FACEBOOK_URL },
   { icon: "photo_camera", label: "Instagram", href: "#" },
   { icon: "chat", label: "Viber", href: "#" },
 ];
@@ -31,11 +31,22 @@ export function Footer({ onNavigate }: Props) {
           </button>
           <p className={styles.desc}>{t.footer.desc}</p>
           <div className={styles.socials}>
-            {SOCIALS.map((s) => (
-              <a key={s.label} href={s.href} aria-label={s.label} className={styles.social}>
-                <Icon name={s.icon} size={20} />
-              </a>
-            ))}
+            {SOCIALS.map((s) => {
+              const external = s.href.startsWith("http");
+              return (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  aria-label={s.label}
+                  className={styles.social}
+                  {...(external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                >
+                  <Icon name={s.icon} size={20} />
+                </a>
+              );
+            })}
           </div>
         </div>
 

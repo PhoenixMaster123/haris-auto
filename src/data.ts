@@ -17,6 +17,17 @@ export const PHONE_DISPLAY = "+359 89 687 7995";
 /** E.164 form used in tel: links (leading 0 dropped, +359 prefix). */
 export const PHONE_TEL = "+359896877995";
 export const EMAIL = "avtokomfort@abv.bg";
+export const FACEBOOK_URL = "https://www.facebook.com/AvtokompleksHaris";
+
+// ---- Business identity (for SEO / structured data) -------------
+export const ADDRESS = {
+  street: "ул. Мария Луиза 2",
+  locality: "Русе",
+  postalCode: "7012",
+  country: "BG",
+};
+/** Approximate Ruse coordinates — refine with the exact Google Maps pin. */
+export const GEO = { lat: 43.8356, lng: 25.9657 };
 
 // ---- Opening hours --------------------------------------------
 /**

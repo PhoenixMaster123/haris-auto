@@ -69,6 +69,11 @@ export const de: Strings = {
   mapDirections: "Route planen",
   promo: "Kostenlose Abholung & Lieferung bei maschineller Teppichreinigung",
   status: { open: "Jetzt geöffnet", closed: "Geschlossen", until: "bis", opens: "öffnet um" },
+  seo: {
+    siteName: "Autokomplex Haris",
+    tagline:
+      "Autowäsche, maschinelle Teppichreinigung, Detailing & Service in Ruse",
+  },
   services: {
     title: "Unsere Leistungen",
     sub: "Komplette Pflege für Ihr Auto — von der Wäsche bis zum Service, unter einem Dach.",

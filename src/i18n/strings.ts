@@ -45,6 +45,7 @@ export interface Strings {
   mapDirections: string;
   promo: string;
   status: { open: string; closed: string; until: string; opens: string };
+  seo: { siteName: string; tagline: string };
   services: {
     title: string;
     sub: string;

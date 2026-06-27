@@ -69,6 +69,11 @@ export const en: Strings = {
   mapDirections: "Get directions",
   promo: "Free pickup & delivery on machine carpet cleaning",
   status: { open: "Open now", closed: "Closed", until: "until", opens: "opens" },
+  seo: {
+    siteName: "Haris Auto Complex",
+    tagline:
+      "Car wash, machine carpet cleaning, detailing & full auto service in Ruse",
+  },
   services: {
     title: "Our services",
     sub: "Complete care for your car — from washing to service, under one roof.",
