@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Автокомплекс Харис — Автомивка, детайлинг и автосервиз в Русе</title>
+    <meta
+      name="description"
+      content="Автокомплекс Харис в Русе — професионална автомивка, машинно пране на килими, детайлинг, керамично покритие и пълен автосервиз. Над 20 години опит."
+    />
+    <meta name="theme-color" content="#0e0f12" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Автокомплекс Харис" />
+    <meta
+      property="og:title"
+      content="Автокомплекс Харис — премиум грижа за вашия автомобил"
+    />
+    <meta
+      property="og:description"
+      content="Автомивка, машинно пране, детайлинг и пълен автосервиз — всичко на едно място в Русе."
+    />
+    <meta property="og:locale" content="bg_BG" />
+  </head>
+  <body>
+    <script>
+      // Set the theme before first paint to avoid a flash of the wrong colours.
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

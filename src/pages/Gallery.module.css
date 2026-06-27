@@ -1,0 +1,123 @@
+.body {
+  padding: 56px 0 0;
+}
+
+/* ---- filters ---- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+.filter {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 10px 20px;
+  color: var(--t-1);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease),
+    border-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.filter:hover {
+  border-color: var(--t-1);
+  transform: translateY(-2px);
+}
+.filterOn {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+/* ---- masonry ---- */
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 16px;
+}
+.tile {
+  position: relative;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  cursor: pointer;
+  grid-row: span 1;
+  animation: fadeUp 0.5s var(--ease) both;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+.tile:hover {
+  transform: scale(1.02);
+  box-shadow: var(--sh-2);
+}
+.tall {
+  grid-row: span 2;
+}
+.video,
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tile:hover .photo {
+  transform: scale(1.04);
+}
+.photo {
+  transition: transform 0.5s var(--ease);
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 12, 15, 0.05) 30%,
+    rgba(11, 12, 15, 0.72) 100%
+  );
+}
+.caption {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.catTag {
+  align-self: flex-start;
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acc-ink);
+  background: var(--acc);
+  padding: 4px 10px;
+  border-radius: var(--r-pill);
+}
+.label {
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 760px) {
+  .masonry {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 170px;
+  }
+}
+@media (max-width: 460px) {
+  .masonry {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+  .tall {
+    grid-row: span 1;
+  }
+}

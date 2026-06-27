@@ -1,0 +1,222 @@
+.body {
+  padding: 72px 0 0;
+}
+.blockTitle {
+  font-family: var(--f-disp);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 1.3rem + 1.4vw, 2.2rem);
+  letter-spacing: -0.02em;
+  color: var(--t-1);
+  margin: 0 0 32px;
+}
+
+/* ---- story ---- */
+.story {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 88px;
+}
+.storyText p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--t-2);
+  margin: 0 0 20px;
+}
+.storyText p:first-child {
+  font-size: 1.22rem;
+  color: var(--t-1);
+  font-weight: 500;
+}
+.storyImg {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-2);
+  display: flex;
+  align-items: flex-end;
+  padding: 26px;
+}
+.storyStat {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.storyStatN {
+  font-family: var(--f-disp);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.storyStatL {
+  font-size: 0.92rem;
+  color: var(--t-on-dark-2);
+  margin-top: 4px;
+}
+
+/* ---- mission ---- */
+.mission {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 88px;
+  padding: 48px 40px;
+  background: var(--paper-2);
+  border-radius: 28px;
+  border: 1px solid var(--line);
+}
+.missionIcon {
+  color: var(--acc-deep);
+}
+.missionTitle {
+  font-family: var(--f-disp);
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: var(--t-1);
+  margin: 14px 0 14px;
+}
+.missionTxt {
+  font-size: 1.18rem;
+  line-height: 1.6;
+  color: var(--t-2);
+  margin: 0;
+}
+
+/* ---- values ---- */
+.values {
+  margin-bottom: 88px;
+}
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.valueCard {
+  position: relative;
+  padding: 32px 26px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.valueCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sh-2);
+}
+.valueNum {
+  font-family: var(--f-disp);
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: var(--acc);
+  opacity: 0.25;
+  line-height: 1;
+}
+.valueCard h3 {
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--t-1);
+  margin: 14px 0 8px;
+}
+.valueCard p {
+  color: var(--t-2);
+  font-size: 0.96rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---- team ---- */
+.team {
+  margin-bottom: 88px;
+}
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.teamCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 24px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+}
+.teamCard:hover {
+  transform: translateY(-6px);
+  background: var(--card);
+  box-shadow: var(--sh-2);
+}
+.teamAvatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.teamCard strong {
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--t-1);
+}
+.teamCard span {
+  color: var(--t-3);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+/* ---- certs ---- */
+.certs {
+  margin-bottom: 96px;
+}
+.certGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.certItem {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 20px 22px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--r-md);
+  font-weight: 600;
+  font-size: 0.96rem;
+}
+.certItem .material-symbols-outlined {
+  color: var(--acc-bright);
+  flex-shrink: 0;
+}
+
+@media (max-width: 940px) {
+  .story {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .valueGrid,
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+  .certGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .certGrid {
+    grid-template-columns: 1fr;
+  }
+  .mission {
+    padding: 36px 24px;
+  }
+}

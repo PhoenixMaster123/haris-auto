@@ -1,0 +1,163 @@
+/* ---- map ---- */
+.mapWrap {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--sh-1);
+  background: var(--paper-2);
+}
+.map {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+  filter: grayscale(0.2) contrast(1.02);
+}
+
+/* ---- CTA band ---- */
+.cta {
+  padding: 0 var(--gut);
+  margin: 96px 0;
+}
+.ctaInner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--ink), var(--ink-3));
+  border-radius: 28px;
+  padding: 56px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.ctaGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      540px 320px at 88% 12%,
+      rgba(20, 184, 198, 0.32),
+      transparent 60%
+    ),
+    radial-gradient(
+      420px 300px at 6% 110%,
+      rgba(20, 184, 198, 0.16),
+      transparent 55%
+    );
+  pointer-events: none;
+}
+.ctaText {
+  position: relative;
+  max-width: 30ch;
+}
+.ctaTitle {
+  font-family: var(--f-disp);
+  font-weight: 800;
+  font-size: clamp(1.7rem, 1.2rem + 1.8vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+}
+.ctaSub {
+  color: var(--t-on-dark-2);
+  font-size: 1.05rem;
+  margin: 14px 0 0;
+}
+.ctaBtns {
+  position: relative;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ---- before / after ---- */
+.baWrap {
+  width: 100%;
+}
+.ba {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sh-2);
+  user-select: none;
+}
+.baLayer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+.baCar {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.baTag {
+  position: relative;
+  z-index: 1;
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: var(--r-pill);
+  backdrop-filter: blur(6px);
+}
+.baTagBefore {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.baTagAfter {
+  margin-left: auto;
+  background: var(--acc);
+  color: var(--acc-ink);
+}
+.baLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+.baKnob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+.baRange {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+@media (max-width: 720px) {
+  .ctaInner {
+    padding: 38px 26px;
+  }
+  .map {
+    height: 320px;
+  }
+}

@@ -1,0 +1,218 @@
+.body {
+  padding: 64px 0 96px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ---- form ---- */
+.formCard {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 36px;
+  box-shadow: var(--sh-1);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.field > span {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--t-2);
+}
+.field input,
+.field select,
+.field textarea {
+  font-family: inherit;
+  font-size: 0.98rem;
+  color: var(--t-1);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 13px 15px;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease),
+    box-shadow 0.2s var(--ease);
+  width: 100%;
+}
+.field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--acc);
+  background: var(--card);
+  box-shadow: 0 0 0 4px rgba(20, 184, 198, 0.12);
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--t-3);
+}
+
+/* ---- success ---- */
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 40px 0;
+}
+.successIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--acc);
+  color: var(--acc-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 0.5s var(--ease) both;
+}
+.success p {
+  font-family: var(--f-disp);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--t-1);
+  margin: 0;
+  max-width: 30ch;
+}
+
+/* ---- info sidebar ---- */
+.info {
+  background: linear-gradient(160deg, var(--ink), var(--ink-3));
+  border-radius: var(--r-lg);
+  padding: 32px 28px;
+  color: #fff;
+}
+.infoTitle {
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0 0 24px;
+}
+.infoList {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.infoList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.infoIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--acc-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.infoLabel {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--t-on-dark-3);
+  margin-bottom: 3px;
+}
+.infoValue {
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+a.infoValue:hover {
+  color: var(--acc-bright);
+}
+.hours {
+  padding-top: 24px;
+  border-top: 1px solid var(--line-dark);
+}
+.hours ul {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.hours li {
+  font-size: 0.92rem;
+  color: var(--t-on-dark-2);
+}
+.emergency {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 24px;
+  padding: 16px 18px;
+  background: rgba(245, 165, 36, 0.12);
+  border: 1px solid rgba(245, 165, 36, 0.3);
+  border-radius: var(--r-md);
+  text-decoration: none;
+  transition: background 0.2s var(--ease);
+}
+.emergency:hover {
+  background: rgba(245, 165, 36, 0.18);
+}
+.emergency .material-symbols-outlined {
+  color: var(--amber);
+}
+.emergency strong {
+  display: block;
+  color: #fff;
+  font-size: 0.95rem;
+}
+.emergency span {
+  display: block;
+  color: var(--amber);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.mapBlock {
+  margin-top: 28px;
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .formCard {
+    padding: 24px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

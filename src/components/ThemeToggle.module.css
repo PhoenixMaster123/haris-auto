@@ -1,0 +1,30 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--t-1);
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease),
+    color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.toggle:hover {
+  border-color: var(--t-1);
+  transform: translateY(-1px);
+}
+.toggle svg {
+  display: block;
+}
+
+/* dark variant used inside the mobile sheet */
+.dark {
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+.dark:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
