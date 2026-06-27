@@ -3,6 +3,8 @@ import { useI18n } from "../hooks/useI18n";
 import { Icon } from "../components/Icon";
 import styles from "./Hero.module.css";
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export function Hero({ onNavigate }: { onNavigate: (p: PageId) => void }) {
   const { t } = useI18n();
 
@@ -49,8 +51,8 @@ export function Hero({ onNavigate }: { onNavigate: (p: PageId) => void }) {
           <div className={styles.videoCard}>
             <video
               className={styles.video}
-              src="/media/carpet.mp4"
-              poster="/media/carpet-poster.jpg"
+              src={asset("/media/carpet.mp4")}
+              poster={asset("/media/carpet-poster.jpg")}
               autoPlay
               muted
               loop

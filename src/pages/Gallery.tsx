@@ -7,6 +7,8 @@ import { CtaBand } from "../components/Shared";
 import { gallery } from "../data";
 import styles from "./Gallery.module.css";
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 type Filter = "all" | GalleryCategory;
 const FILTERS: Filter[] = ["all", "exterior", "workshop", "carpets"];
 
@@ -52,7 +54,7 @@ export function Gallery({ onNavigate }: { onNavigate: (p: PageId) => void }) {
               {g.img && (
                 <img
                   className={styles.photo}
-                  src={g.img}
+                  src={asset(g.img)}
                   alt={L(g.label)}
                   loading="lazy"
                   onError={(e) => {
@@ -63,8 +65,8 @@ export function Gallery({ onNavigate }: { onNavigate: (p: PageId) => void }) {
               {g.video && (
                 <video
                   className={styles.video}
-                  src={g.video}
-                  poster={g.poster}
+                  src={asset(g.video)}
+                  poster={g.poster ? asset(g.poster) : undefined}
                   autoPlay
                   muted
                   loop

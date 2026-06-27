@@ -16,6 +16,8 @@ import {
 import { useState } from "react";
 import styles from "./Home.module.css";
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
   const { t } = useI18n();
   const L = useLocalized();
@@ -205,7 +207,7 @@ export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
                 {g.img && (
                   <img
                     className={styles.galVideo}
-                    src={g.img}
+                    src={asset(g.img)}
                     alt={L(g.label)}
                     loading="lazy"
                     onError={(e) => {
@@ -216,8 +218,8 @@ export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
                 {g.video && (
                   <video
                     className={styles.galVideo}
-                    src={g.video}
-                    poster={g.poster}
+                    src={asset(g.video)}
+                    poster={g.poster ? asset(g.poster) : undefined}
                     autoPlay
                     muted
                     loop
