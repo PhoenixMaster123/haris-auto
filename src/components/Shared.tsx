@@ -50,7 +50,7 @@ export function CtaBand({ onBook }: { onBook: () => void }) {
           <p className={styles.ctaSub}>{t.cta.sub}</p>
         </div>
         <div className={styles.ctaBtns}>
-          <button className="btn btn--acc" onClick={onBook}>
+          <button className="btn btn--sun" onClick={onBook}>
             <Icon name="event" size={20} />
             {t.cta.btn}
           </button>
@@ -70,9 +70,9 @@ export function CtaBand({ onBook }: { onBook: () => void }) {
  */
 function CarScene({ clean }: { clean: boolean }) {
   const k = clean ? "a" : "b";
-  const glass = clean ? "#c4eef4" : "#717c7e";
+  const glass = clean ? "#cfeff8" : "#717c7e";
   const tyre = clean ? "#15171a" : "#202019";
-  const rim = clean ? "#d7dde2" : "#8d8f86";
+  const rim = clean ? "#e6ebee" : "#8d8f86";
   return (
     <svg
       className={styles.baCar}
@@ -84,9 +84,9 @@ function CarScene({ clean }: { clean: boolean }) {
         <linearGradient id={`body-${k}`} x1="0" y1="0" x2="0" y2="1">
           {clean ? (
             <>
-              <stop offset="0" stopColor="#3bd9e8" />
-              <stop offset="0.55" stopColor="#15b4c6" />
-              <stop offset="1" stopColor="#0a7689" />
+              <stop offset="0" stopColor="#ffcf5e" />
+              <stop offset="0.55" stopColor="#ffb224" />
+              <stop offset="1" stopColor="#d98c00" />
             </>
           ) : (
             <>
@@ -175,7 +175,7 @@ export function BeforeAfter() {
           className={styles.baLayer}
           style={{
             background:
-              "radial-gradient(120% 120% at 70% 18%, rgba(20,184,198,.30), transparent 60%), linear-gradient(135deg,#0b0c0f,#163039 70%,#0891b2)",
+              "radial-gradient(120% 120% at 70% 18%, rgba(255,214,120,.4), transparent 55%), linear-gradient(135deg,#7cc5de,#3d9ec2 60%,#1690b4)",
           }}
         >
           <CarScene clean />
@@ -188,7 +188,7 @@ export function BeforeAfter() {
           className={styles.baLayer}
           style={{
             clipPath: `inset(0 ${100 - pos}% 0 0)`,
-            background: "linear-gradient(135deg,#41433f,#2b2c28 60%,#1a1b18)",
+            background: "linear-gradient(135deg,#4a5254,#33393a 60%,#22282a)",
             filter: "saturate(.8) brightness(.92)",
           }}
         >

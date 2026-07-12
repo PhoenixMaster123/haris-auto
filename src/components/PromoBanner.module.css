@@ -1,7 +1,7 @@
 .bar {
   position: relative;
-  background: linear-gradient(100deg, var(--acc-deep), var(--acc));
-  color: #fff;
+  background: linear-gradient(100deg, var(--sun), var(--sun-bright));
+  color: var(--sun-ink);
   cursor: pointer;
   font-size: 0.9rem;
 }
@@ -19,7 +19,7 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(18, 43, 54, 0.14);
   flex-shrink: 0;
 }
 .text {
@@ -51,14 +51,14 @@
   border-radius: 50%;
   border: none;
   background: transparent;
-  color: #fff;
+  color: inherit;
   cursor: pointer;
   flex-shrink: 0;
   opacity: 0.85;
   transition: background 0.2s var(--ease), opacity 0.2s var(--ease);
 }
 .close:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(18, 43, 54, 0.14);
   opacity: 1;
 }
 

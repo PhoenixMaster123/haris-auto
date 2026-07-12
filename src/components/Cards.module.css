@@ -39,8 +39,8 @@
   width: 54px;
   height: 54px;
   border-radius: var(--r-md);
-  background: linear-gradient(140deg, var(--ink), var(--ink-3));
-  color: var(--acc-bright);
+  background: var(--chip-bg);
+  color: var(--chip-ico);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,7 +105,7 @@
   transition: gap 0.25s var(--ease), background 0.25s var(--ease);
 }
 .cardBtn:hover {
-  background: var(--acc);
-  color: var(--acc-ink);
+  background: var(--sun);
+  color: var(--sun-ink);
   gap: 12px;
 }

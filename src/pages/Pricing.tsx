@@ -53,7 +53,7 @@ export function Pricing({ onNavigate }: { onNavigate: (p: PageId) => void }) {
                 ))}
               </ul>
               <button
-                className={`btn ${p.popular ? "btn--acc" : "btn--ink"} ${styles.choose}`}
+                className={`btn ${p.popular ? "btn--sun" : "btn--ink"} ${styles.choose}`}
                 onClick={() => onNavigate("contact")}
               >
                 {t.pricing.choose}

@@ -52,9 +52,9 @@
     transform 0.25s var(--ease);
 }
 .social:hover {
-  background: var(--acc);
-  border-color: var(--acc);
-  color: var(--acc-ink);
+  background: var(--sun);
+  border-color: var(--sun);
+  color: var(--sun-ink);
   transform: translateY(-3px);
 }
 
@@ -100,7 +100,7 @@
   font-size: 0.92rem;
 }
 .contactItem .material-symbols-outlined {
-  color: var(--acc);
+  color: var(--acc-bright);
   flex-shrink: 0;
 }
 .hours {

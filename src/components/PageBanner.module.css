@@ -1,24 +1,29 @@
 .banner {
   position: relative;
   background: radial-gradient(
-      900px 380px at 82% 10%,
-      rgba(20, 184, 198, 0.2),
+      900px 380px at 84% 0%,
+      rgba(82, 199, 227, 0.13),
       transparent 60%
     ),
-    linear-gradient(180deg, #0b0c0f, #101319);
+    linear-gradient(175deg, #0a222d, #0e2e3c);
   color: #fff;
   overflow: hidden;
 }
+/* single light shaft, echoing the hero */
 .glow {
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    rgba(255, 255, 255, 0.04) 1px,
-    transparent 0
+  top: -60%;
+  right: 2%;
+  width: 34%;
+  height: 240%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(82, 199, 227, 0.1) 40%,
+    rgba(82, 199, 227, 0.14) 55%,
+    transparent
   );
-  background-size: 38px 38px;
-  mask-image: linear-gradient(180deg, #000, transparent 90%);
+  transform: rotate(22deg);
   pointer-events: none;
 }
 .inner {
@@ -30,9 +35,10 @@
 .title {
   font-family: var(--f-disp);
   font-weight: 800;
-  font-size: clamp(2.3rem, 1.6rem + 3.4vw, 3.8rem);
+  font-size: clamp(2.2rem, 1.5rem + 3.4vw, 3.7rem);
   line-height: 1.02;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
   margin: 14px 0 0;
 }
 .sub {

@@ -10,8 +10,7 @@ export function Hero({ onNavigate }: { onNavigate: (p: PageId) => void }) {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.glow} aria-hidden="true" />
-      <div className={styles.aurora} aria-hidden="true" />
+      <div className={styles.shafts} aria-hidden="true" />
       <div className={`wrap ${styles.inner}`}>
         <div className={styles.copy}>
           <span className={styles.kicker}>
@@ -24,7 +23,7 @@ export function Hero({ onNavigate }: { onNavigate: (p: PageId) => void }) {
           </h1>
           <p className={styles.sub}>{t.hero.sub}</p>
           <div className={styles.actions}>
-            <button className="btn btn--acc" onClick={() => onNavigate("contact")}>
+            <button className="btn btn--sun" onClick={() => onNavigate("contact")}>
               <Icon name="event" size={20} />
               {t.hero.cta1}
             </button>

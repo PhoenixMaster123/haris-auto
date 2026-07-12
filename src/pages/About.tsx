@@ -27,7 +27,7 @@ export function About({ onNavigate }: { onNavigate: (p: PageId) => void }) {
             <div
               className={styles.storyImg}
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(11,12,15,0.15) 0%, rgba(11,12,15,0.72) 100%), url(${asset("/media/car-done.jpg")})`,
+                backgroundImage: `linear-gradient(180deg, rgba(8,30,40,0.15) 0%, rgba(8,30,40,0.72) 100%), url(${asset("/media/car-done.jpg")})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -51,9 +51,8 @@ export function About({ onNavigate }: { onNavigate: (p: PageId) => void }) {
         <section className={styles.values}>
           <h2 className={styles.blockTitle}>{t.about.valuesT}</h2>
           <div className={styles.valueGrid}>
-            {t.about.values.map((v, i) => (
+            {t.about.values.map((v) => (
               <div key={v.t} className={`${styles.valueCard} reveal`}>
-                <span className={styles.valueNum}>0{i + 1}</span>
                 <h3>{v.t}</h3>
                 <p>{v.d}</p>
               </div>

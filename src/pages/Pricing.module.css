@@ -36,8 +36,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--acc);
-  color: var(--acc-ink);
+  background: var(--sun);
+  color: var(--sun-ink);
   font-family: var(--f-disp);
   font-weight: 700;
   font-size: 0.74rem;

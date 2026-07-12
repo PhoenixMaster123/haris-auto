@@ -18,7 +18,7 @@ export function Logo({ size = 42 }: { size?: number }) {
         flexShrink: 0,
       }}
     >
-      Х<span style={{ color: "var(--acc)" }}>.</span>
+      Х<span style={{ color: "var(--sun)" }}>.</span>
     </span>
   );
 }

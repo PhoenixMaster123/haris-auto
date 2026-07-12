@@ -50,7 +50,6 @@ export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
                 <div className={styles.whyIcon}>
                   <Icon name={whyIcons[i]} size={26} />
                 </div>
-                <span className={styles.whyNum}>0{i + 1}</span>
                 <h3 className={styles.whyTitle}>{it.title}</h3>
                 <p className={styles.whyDesc}>{it.desc}</p>
               </div>

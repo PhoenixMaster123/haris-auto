@@ -63,7 +63,7 @@ export function Navbar({ page, onNavigate }: Props) {
               <ThemeToggle />
               <LanguageMenu />
             </div>
-            <button className={`btn btn--acc ${styles.book}`} onClick={() => go("contact")}>
+            <button className={`btn btn--sun ${styles.book}`} onClick={() => go("contact")}>
               <Icon name="event" size={19} />
               {t.nav.book}
             </button>
@@ -112,7 +112,7 @@ export function Navbar({ page, onNavigate }: Props) {
               <LanguageMenu variant="dark" />
             </div>
             <button
-              className="btn btn--acc"
+              className="btn btn--sun"
               style={{ marginTop: 8, width: "100%", padding: "16px" }}
               onClick={() => go("contact")}
             >

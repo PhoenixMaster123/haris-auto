@@ -130,7 +130,7 @@ export function Contact() {
                     placeholder={t.contact.fMessage}
                   />
                 </label>
-                <button type="submit" className="btn btn--acc" style={{ width: "100%" }}>
+                <button type="submit" className="btn btn--sun" style={{ width: "100%" }}>
                   <Icon name="send" size={19} />
                   {t.contact.send}
                 </button>

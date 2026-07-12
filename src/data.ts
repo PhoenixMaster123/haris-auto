@@ -365,7 +365,7 @@ export const gallery: GalleryItem[] = [
     cat: "exterior",
     tall: true,
     label: L("Външно измиване", "Exterior wash", "Spălare exterioară", "Außenwäsche"),
-    grad: "linear-gradient(135deg,#0b0c0f,#22323a 70%,#0891b2)",
+    grad: "linear-gradient(135deg,#0a222d,#134253 70%,#1690b4)",
     img: "/media/car-wash2.jpg",
   },
   {
@@ -393,7 +393,7 @@ export const gallery: GalleryItem[] = [
     cat: "carpets",
     tall: false,
     label: L("Машинно пране на килими", "Machine carpet wash", "Spălare mecanică covoare", "Maschinelle Teppichwäsche"),
-    grad: "linear-gradient(135deg,#0e1418,#0e7490)",
+    grad: "linear-gradient(135deg,#0b2530,#0d6884)",
     video: "/media/carpet.mp4",
     poster: "/media/carpet-poster.jpg",
   },
@@ -401,7 +401,7 @@ export const gallery: GalleryItem[] = [
     cat: "exterior",
     tall: false,
     label: L("Активна пяна", "Snow-foam wash", "Spumă activă", "Aktivschaum-Wäsche"),
-    grad: "linear-gradient(135deg,#0b0c0f,#22323a 70%,#0891b2)",
+    grad: "linear-gradient(135deg,#0a222d,#134253 70%,#1690b4)",
     img: "/media/car-wash.jpg",
   },
   // ---- remaining gallery-only tiles ----
@@ -409,7 +409,7 @@ export const gallery: GalleryItem[] = [
     cat: "workshop",
     tall: false,
     label: L("Зареждане на климатик", "A/C recharge", "Încărcare climatizare", "Klimaanlagen-Befüllung"),
-    grad: "linear-gradient(135deg,#0b0f14,#16323f 60%,#0e7490)",
+    grad: "linear-gradient(135deg,#081e28,#12404f 60%,#0d6884)",
     img: "/media/ac-recharge.jpg",
   },
   {
@@ -423,7 +423,7 @@ export const gallery: GalleryItem[] = [
     cat: "carpets",
     tall: false,
     label: L("Машина за килими", "Carpet machine", "Mașină de covoare", "Teppichmaschine"),
-    grad: "linear-gradient(135deg,#0e1418,#0e7490)",
+    grad: "linear-gradient(135deg,#0b2530,#0d6884)",
     img: "/media/cleaning-carpet-machine2.jpg",
   },
   {
@@ -444,7 +444,7 @@ export const gallery: GalleryItem[] = [
     cat: "exterior",
     tall: false,
     label: L("Готови за път", "Ready to roll", "Gata de drum", "Startklar"),
-    grad: "linear-gradient(135deg,#0b0c0f,#22323a 70%,#0891b2)",
+    grad: "linear-gradient(135deg,#0a222d,#134253 70%,#1690b4)",
     img: "/media/car-done.jpg",
   },
   {
@@ -458,7 +458,7 @@ export const gallery: GalleryItem[] = [
     cat: "carpets",
     tall: true,
     label: L("Вземане и доставка", "Pickup & delivery", "Preluare și livrare", "Abholung & Lieferung"),
-    grad: "linear-gradient(135deg,#0e1418,#0e7490)",
+    grad: "linear-gradient(135deg,#0b2530,#0d6884)",
     img: "/media/carpet-bus.jpg",
   },
 ];

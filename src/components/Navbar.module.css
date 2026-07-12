@@ -70,9 +70,10 @@
   left: 0;
   right: 100%;
   bottom: -2px;
-  height: 2px;
-  background: var(--acc);
+  height: 3px;
+  background: var(--sun);
   border-radius: 2px;
+  transform: skewX(-18deg);
   transition: right 0.28s var(--ease);
 }
 .navLink:hover {
@@ -120,7 +121,7 @@
   position: fixed;
   inset: 0;
   z-index: 80;
-  background: rgba(14, 15, 18, 0.98);
+  background: rgba(8, 30, 40, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   animation: fadeIn 0.2s ease;

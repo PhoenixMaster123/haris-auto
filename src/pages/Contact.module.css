@@ -60,7 +60,7 @@
   outline: none;
   border-color: var(--acc);
   background: var(--card);
-  box-shadow: 0 0 0 4px rgba(20, 184, 198, 0.12);
+  box-shadow: 0 0 0 4px rgba(22, 144, 180, 0.14);
 }
 .field input::placeholder,
 .field textarea::placeholder {
@@ -80,8 +80,8 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: var(--acc);
-  color: var(--acc-ink);
+  background: var(--sun);
+  color: var(--sun-ink);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,17 +175,17 @@ a.infoValue:hover {
   gap: 13px;
   margin-top: 24px;
   padding: 16px 18px;
-  background: rgba(245, 165, 36, 0.12);
-  border: 1px solid rgba(245, 165, 36, 0.3);
+  background: rgba(255, 178, 36, 0.12);
+  border: 1px solid rgba(255, 178, 36, 0.32);
   border-radius: var(--r-md);
   text-decoration: none;
   transition: background 0.2s var(--ease);
 }
 .emergency:hover {
-  background: rgba(245, 165, 36, 0.18);
+  background: rgba(255, 178, 36, 0.18);
 }
 .emergency .material-symbols-outlined {
-  color: var(--amber);
+  color: var(--sun);
 }
 .emergency strong {
   display: block;
@@ -194,7 +194,7 @@ a.infoValue:hover {
 }
 .emergency span {
   display: block;
-  color: var(--amber);
+  color: var(--sun);
   font-weight: 700;
   font-size: 1.05rem;
 }

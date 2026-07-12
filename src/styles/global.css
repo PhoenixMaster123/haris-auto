@@ -2,51 +2,58 @@
 
 /* ============================================================
    Автокомплекс Харис — design system
+   "Sunlit water": deep Danube navy, rinse-water mist whites,
+   water blue for information, one marigold sun for action.
    ============================================================ */
 
 :root {
   /* --- palette --- */
-  --ink: #0e0f12; /* near-black charcoal */
-  --ink-2: #16181d; /* elevated dark surface */
-  --ink-3: #1d2127;
-  --paper: #ffffff;
-  --paper-2: #f7f7f5; /* warm off-white section bg */
-  --paper-3: #eef0f2;
+  --ink: #0c2733; /* deep sea navy — dark bands (hero, footer, banners) */
+  --ink-2: #11303e; /* elevated dark surface */
+  --ink-3: #173d4e;
+  --paper: #f6fafc; /* page background — fresh-rinse white */
+  --paper-2: #ebf3f7; /* mist section bg */
+  --paper-3: #dfebf1;
   --card: #ffffff; /* elevated card surface — flips in dark mode */
-  --line: #e6e8ec; /* hairline border on light */
+  --line: #dce7ed; /* hairline border on light */
   --line-dark: rgba(255, 255, 255, 0.1);
-  --nav-bg: rgba(255, 255, 255, 0.82); /* sticky header backdrop */
+  --nav-bg: rgba(246, 250, 252, 0.85); /* sticky header backdrop */
   color-scheme: light;
 
   /* text */
-  --t-1: #0e0f12;
-  --t-2: #4b5158;
-  --t-3: #8a9098;
+  --t-1: #0c2733;
+  --t-2: #465a64;
+  --t-3: #7a8e97;
   --t-on-dark-1: #ffffff;
-  --t-on-dark-2: #b6bcc4;
-  --t-on-dark-3: #80868f;
+  --t-on-dark-2: #b6cad3;
+  --t-on-dark-3: #7f98a3;
 
-  /* accent: cyan -> teal */
-  --acc: #14b8c6;
-  --acc-bright: #2ad4e4;
-  --acc-deep: #0e7490;
-  --acc-ink: #052a31; /* text on accent */
+  /* accent: water blue — links, icons, details (information) */
+  --acc: #1690b4;
+  --acc-bright: #52c7e3; /* on dark surfaces */
+  --acc-deep: #0d6884; /* text-safe on light */
+  --acc-ink: #04212b; /* text on accent */
 
-  /* secondary CTA: warm amber */
-  --amber: #f5a524;
-  --amber-deep: #d98314;
-  --amber-ink: #2a1a02;
+  /* sun: marigold — CTAs, active states, highlights (action) */
+  --sun: #ffb224;
+  --sun-bright: #ffc554;
+  --sun-ink: #122b36;
+
+  /* icon chips: powder-blue tint that flips in dark mode */
+  --chip-bg: #dceef5;
+  --chip-ico: #0d6884;
 
   /* radii */
-  --r-sm: 10px;
-  --r-md: 16px;
-  --r-lg: 24px;
-  --r-pill: 999px;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-btn: 12px; /* "plate" buttons */
+  --r-pill: 999px; /* chips, tags, badges */
 
   /* shadows */
-  --sh-1: 0 1px 2px rgba(14, 15, 18, 0.04), 0 4px 16px rgba(14, 15, 18, 0.06);
-  --sh-2: 0 8px 30px rgba(14, 15, 18, 0.1);
-  --sh-acc: 0 10px 34px rgba(20, 184, 198, 0.32);
+  --sh-1: 0 1px 2px rgba(12, 39, 51, 0.04), 0 4px 16px rgba(12, 39, 51, 0.06);
+  --sh-2: 0 8px 30px rgba(12, 39, 51, 0.12);
+  --sh-acc: 0 10px 30px rgba(255, 178, 36, 0.3);
 
   /* type */
   --f-body: "Sofia Sans", system-ui, -apple-system, sans-serif;
@@ -66,24 +73,27 @@
    The hero/banners/footer are intentionally dark in both themes.
    ============================================================ */
 :root[data-theme="dark"] {
-  --ink: #15191f; /* "dark feature band" base */
-  --ink-2: #1a1e25;
-  --ink-3: #21262e;
-  --paper: #0c0e12; /* page background */
-  --paper-2: #13161c; /* alt section background */
-  --paper-3: #1a1e25;
-  --card: #171b21; /* elevated card surface (was #fff in light) */
+  --ink: #0f2e3b; /* "dark feature band" base */
+  --ink-2: #123542;
+  --ink-3: #194453;
+  --paper: #081e28; /* page background — deep water at night */
+  --paper-2: #0c2733; /* alt section background */
+  --paper-3: #123240;
+  --card: #0e2a36; /* elevated card surface (was #fff in light) */
   --line: rgba(255, 255, 255, 0.1);
   --line-dark: rgba(255, 255, 255, 0.08);
 
-  --t-1: #eef1f4;
-  --t-2: #aab1ba;
-  --t-3: #7d838c;
+  --t-1: #eaf3f6;
+  --t-2: #a9c0ca;
+  --t-3: #71919d;
+
+  --chip-bg: rgba(82, 199, 227, 0.13);
+  --chip-ico: #52c7e3;
 
   --sh-1: 0 1px 2px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.4);
   --sh-2: 0 18px 50px rgba(0, 0, 0, 0.6);
 
-  --nav-bg: rgba(12, 14, 18, 0.82);
+  --nav-bg: rgba(8, 30, 40, 0.85);
   color-scheme: dark;
 }
 
@@ -108,8 +118,8 @@ body {
   transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
 }
 ::selection {
-  background: var(--acc);
-  color: var(--acc-ink);
+  background: var(--sun);
+  color: var(--sun-ink);
 }
 img {
   max-width: 100%;
@@ -147,35 +157,38 @@ a {
   padding-inline: var(--gut);
 }
 
+/* eyebrow: one small squeegee swipe, then the label */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   font-family: var(--f-disp);
   font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--acc-deep);
 }
 .eyebrow::before {
   content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--acc);
-  box-shadow: 0 0 12px var(--acc);
+  width: 18px;
+  height: 5px;
+  border-radius: 2px 3px 2px 3px;
+  background: var(--sun);
+  transform: skewX(-18deg);
 }
 .eyebrow.on-dark {
   color: var(--acc-bright);
 }
 
+/* section headings: condensed uppercase, like local signage */
 .h-sec {
   font-family: var(--f-disp);
   font-weight: 800;
-  font-size: clamp(2rem, 1.4rem + 2.6vw, 3.1rem);
-  line-height: 1.04;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.9rem, 1.3rem + 2.5vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
   margin: 14px 0 0;
 }
 .sub-sec {
@@ -186,7 +199,7 @@ a {
   margin: 16px 0 0;
 }
 
-/* primary pill button */
+/* primary "plate" button */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -194,10 +207,13 @@ a {
   gap: 9px;
   border: none;
   cursor: pointer;
+  font-family: var(--f-disp);
   font-weight: 700;
-  font-size: 0.96rem;
-  padding: 14px 26px;
-  border-radius: var(--r-pill);
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: var(--r-btn);
   transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease),
     background 0.25s var(--ease), color 0.2s var(--ease);
   text-decoration: none;
@@ -205,34 +221,34 @@ a {
 .btn:active {
   transform: translateY(1px) scale(0.99);
 }
-.btn--acc {
+.btn--sun {
   position: relative;
   overflow: hidden;
-  background: var(--acc);
-  color: var(--acc-ink);
+  background: var(--sun);
+  color: var(--sun-ink);
   box-shadow: var(--sh-acc);
 }
-.btn--acc:hover {
-  background: var(--acc-bright);
+.btn--sun:hover {
+  background: var(--sun-bright);
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(20, 184, 198, 0.45);
+  box-shadow: 0 14px 40px rgba(255, 178, 36, 0.42);
 }
-/* light sweep that glides across the button on hover */
-.btn--acc::after {
+/* water sheen that glides across the button on hover */
+.btn--sun::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     120deg,
     transparent 30%,
-    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.55) 50%,
     transparent 70%
   );
   transform: translateX(-120%);
   transition: transform 0.6s var(--ease);
   pointer-events: none;
 }
-.btn--acc:hover::after {
+.btn--sun:hover::after {
   transform: translateX(120%);
 }
 .btn--ink {
@@ -240,10 +256,10 @@ a {
   color: #fff;
 }
 .btn--ink:hover {
-  background: #000;
+  background: #06171f;
   transform: translateY(-2px);
 }
-/* On dark cards the near-black ink button would vanish, so invert it. */
+/* On dark cards the navy ink button would vanish, so invert it. */
 :root[data-theme="dark"] .btn--ink {
   background: var(--t-1);
   color: var(--paper);
@@ -301,25 +317,29 @@ a {
     transform: translateY(-14px);
   }
 }
-@keyframes shimmer {
-  0% {
-    background-position: 200% 0;
+
+/* scroll-reveal: a squeegee wipe — content is wiped clean into view.
+   The end state over-insets outward so hover shadows are never clipped. */
+@keyframes wipeIn {
+  from {
+    opacity: 0;
+    clip-path: inset(-1% 96% -1% 0);
+    transform: translateY(14px);
   }
-  100% {
-    background-position: -200% 0;
+  60% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(-160px);
+    transform: none;
   }
 }
-
-/* scroll-reveal: starts hidden, .in flips it on */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
-  will-change: opacity, transform;
 }
 .reveal.in {
-  opacity: 1;
-  transform: none;
+  animation: wipeIn 0.7s var(--ease) both;
 }
 
 /* focus visibility for keyboard users */
@@ -336,8 +356,11 @@ a {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal {
+  .reveal,
+  .reveal.in {
+    animation: none;
     opacity: 1;
+    clip-path: none;
     transform: none;
   }
 }
