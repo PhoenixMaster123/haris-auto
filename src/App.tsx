@@ -13,12 +13,29 @@ import { Pricing } from "./pages/Pricing";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 
+const PAGES: PageId[] = ["home", "services", "gallery", "pricing", "about", "contact"];
+
+/** Current page from the URL hash (e.g. #pricing), defaulting to home. */
+const fromHash = (): PageId => {
+  const h = window.location.hash.replace(/^#\/?/, "") as PageId;
+  return PAGES.includes(h) ? h : "home";
+};
+
 export default function App() {
-  const [page, setPage] = useState<PageId>("home");
+  const [page, setPage] = useState<PageId>(fromHash);
 
   const navigate = (p: PageId) => {
-    setPage(p);
+    // Keep the hash in sync so every page is linkable; hashchange updates state.
+    if (window.location.hash !== `#${p}`) window.location.hash = p;
+    else setPage(p);
   };
+
+  // back/forward buttons and hand-edited hashes
+  useEffect(() => {
+    const onHash = () => setPage(fromHash());
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
+  }, []);
 
   // scroll to top whenever the page changes
   useEffect(() => {
