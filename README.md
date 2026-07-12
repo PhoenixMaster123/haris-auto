@@ -5,9 +5,24 @@ a car wash, machine carpet-cleaning, detailing and full auto-service business in
 
 Built with **React + TypeScript + Vite**.
 
+## Design — "Sunlit water"
+
+Grounded in what the business does: water, sunshine and clean cars in Ruse on the Danube.
+
+- **Deep sea-navy** dark bands (hero, page banners, footer) over **mist-white** sections
+- **Water blue** for informational accents — links, icons, eyebrows, counts
+- One **marigold "sun"** accent carries every action: CTAs, active nav, highlights
+- Signature: the **squeegee swipe** — a marigold stroke behind the hero headline,
+  swipe dashes as eyebrow markers, and scroll reveals that wipe content clean
+- **Sofia Sans / Sofia Sans Condensed** (Bulgarian-designed, full Cyrillic);
+  headings set in condensed uppercase like local signage
+- Tokens live in `src/styles/global.css` (`--ink`, `--paper*`, `--acc*` water blue,
+  `--sun*` marigold, `--chip-*`); the dark theme only swaps token values
+
 ## Highlights
 
-- **Multi-page** (not a single scroller): Home, Services, Gallery, Pricing, About, Contact
+- **Multi-page** (not a single scroller): Home, Services, Gallery, Pricing, About, Contact —
+  each page is deep-linkable via the URL hash (`#pricing`, `#contact`, …)
 - **Language dropdown** — Bulgarian, English, Romanian & German, all fully translated
 - **Light & dark theme** — navbar toggle, persisted to `localStorage`, follows the OS preference on first visit (no flash of the wrong colours)
 - **Euro pricing** throughout
