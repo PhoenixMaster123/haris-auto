@@ -6,6 +6,8 @@ import {
   EMAIL,
   FACEBOOK_URL,
   GEO,
+  GOOGLE_MAPS_URL,
+  OFFICIAL_SITE_URL,
   OPENING_HOURS,
   PHONE_TEL,
 } from "../data";
@@ -137,7 +139,8 @@ export function Seo({ page }: { page: PageId }) {
         longitude: GEO.lng,
       },
       areaServed: ADDRESS.locality,
-      sameAs: [FACEBOOK_URL],
+      hasMap: GOOGLE_MAPS_URL,
+      sameAs: [FACEBOOK_URL, OFFICIAL_SITE_URL],
       openingHoursSpecification: OPENING_HOURS.map((h, i) => ({
         "@type": "OpeningHoursSpecification",
         dayOfWeek: SCHEMA_DAYS[i],
