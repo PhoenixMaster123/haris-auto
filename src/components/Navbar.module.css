@@ -62,6 +62,7 @@
   padding: 6px 0;
   color: var(--t-1);
   position: relative;
+  white-space: nowrap;
   transition: color 0.2s var(--ease);
 }
 .navLink::after {
@@ -102,6 +103,30 @@
 .book {
   padding: 11px 20px;
   font-size: 0.9rem;
+  white-space: nowrap;
+}
+/* click-to-call: the most wanted action for a local shop stays visible */
+.callDesk {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--f-disp);
+  font-weight: 800;
+  font-size: 1.02rem;
+  letter-spacing: 0.02em;
+  color: var(--t-1);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: var(--r-btn);
+  white-space: nowrap;
+  transition: color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.callDesk .material-symbols-outlined {
+  color: var(--acc-deep);
+}
+.callDesk:hover {
+  color: var(--acc-deep);
+  background: var(--chip-bg);
 }
 .burger {
   display: none;
@@ -185,8 +210,22 @@
   align-items: center;
   gap: 12px;
 }
+.sheetCall {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.sheetCall a {
+  padding: 14px 10px;
+}
 
 /* ---- responsive ---- */
+@media (max-width: 1150px) {
+  .callDesk {
+    display: none;
+  }
+}
 @media (max-width: 940px) {
   .nav,
   .toolsDesk,

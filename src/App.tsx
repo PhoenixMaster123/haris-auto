@@ -5,6 +5,7 @@ import { I18nProvider } from "./hooks/useI18n";
 import { Seo } from "./components/Seo";
 import { PromoBanner } from "./components/PromoBanner";
 import { Navbar } from "./components/Navbar";
+import { MobileActionBar } from "./components/MobileActionBar";
 import { Footer } from "./components/Footer";
 import { Home } from "./pages/Home";
 import { Services } from "./pages/Services";
@@ -57,6 +58,7 @@ export default function App() {
           {page === "contact" && <Contact />}
         </main>
         <Footer onNavigate={navigate} />
+        <MobileActionBar page={page} onNavigate={navigate} />
       </I18nProvider>
     </ThemeProvider>
   );

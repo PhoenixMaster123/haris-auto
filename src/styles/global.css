@@ -349,6 +349,13 @@ a {
   border-radius: 4px;
 }
 
+/* keep the footer reachable under the fixed mobile action bar */
+@media (max-width: 720px) {
+  body[data-action-bar="1"] {
+    padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;

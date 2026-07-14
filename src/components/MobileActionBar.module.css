@@ -1,0 +1,59 @@
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 70; /* above the sticky header (60), below the menu sheet (80) */
+  display: none;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  background: var(--ink);
+  border-top: 1px solid var(--line-dark);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -10px 30px rgba(12, 39, 51, 0.28);
+}
+
+.act,
+.book {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 8px 6px;
+  font-family: var(--f-disp);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.act {
+  background: transparent;
+  color: #fff;
+}
+.act + .act {
+  border-left: 1px solid var(--line-dark);
+}
+.act:active {
+  background: rgba(255, 255, 255, 0.08);
+}
+.book {
+  background: var(--sun);
+  color: var(--sun-ink);
+}
+.book:active {
+  background: var(--sun-bright);
+}
+
+@media (max-width: 720px) {
+  .bar {
+    display: grid;
+  }
+}
+@media print {
+  .bar {
+    display: none;
+  }
+}

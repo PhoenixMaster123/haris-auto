@@ -1,7 +1,9 @@
 import { useState } from "react";
 import type { PageId } from "../types";
 import { useI18n } from "../hooks/useI18n";
+import { PHONE_DISPLAY, PHONE_TEL, VIBER_URL } from "../data";
 import { Icon } from "./Icon";
+import { BrandIcon } from "./BrandIcon";
 import { LanguageMenu } from "./LanguageMenu";
 import { ThemeToggle } from "./ThemeToggle";
 import { OpenStatus } from "./OpenStatus";
@@ -63,6 +65,10 @@ export function Navbar({ page, onNavigate }: Props) {
               <ThemeToggle />
               <LanguageMenu />
             </div>
+            <a className={styles.callDesk} href={`tel:${PHONE_TEL}`}>
+              <Icon name="call" size={18} fill />
+              {PHONE_DISPLAY}
+            </a>
             <button className={`btn btn--sun ${styles.book}`} onClick={() => go("contact")}>
               <Icon name="event" size={19} />
               {t.nav.book}
@@ -110,6 +116,16 @@ export function Navbar({ page, onNavigate }: Props) {
             <div className={styles.sheetLang}>
               <ThemeToggle variant="dark" />
               <LanguageMenu variant="dark" />
+            </div>
+            <div className={styles.sheetCall}>
+              <a className="btn btn--ghost" href={`tel:${PHONE_TEL}`}>
+                <Icon name="call" size={19} fill />
+                {t.nav.call}
+              </a>
+              <a className="btn btn--ghost" href={VIBER_URL}>
+                <BrandIcon name="viber" size={18} />
+                Viber
+              </a>
             </div>
             <button
               className="btn btn--sun"
