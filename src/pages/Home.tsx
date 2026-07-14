@@ -12,6 +12,7 @@ import {
   testimonials,
   gallery,
   brands,
+  GOOGLE_MAPS_URL,
 } from "../data";
 import { useState } from "react";
 import styles from "./Home.module.css";
@@ -163,6 +164,18 @@ export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
                 <Icon name="arrow_forward" size={20} />
               </button>
             </div>
+          </div>
+          {/* the review source locals actually check */}
+          <div className={styles.testiGoogle}>
+            <a
+              className="btn btn--ghost-ink"
+              href={GOOGLE_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="star" size={18} fill style={{ color: "var(--sun)" }} />
+              {t.testi.google}
+            </a>
           </div>
         </div>
       </section>

@@ -75,6 +75,11 @@ export function Hero({ onNavigate }: { onNavigate: (p: PageId) => void }) {
             <Icon name="workspace_premium" size={20} />
             {t.why.items[0].title}
           </div>
+          {/* Sunday hours are rare for auto services — worth a sun badge */}
+          <div className={`${styles.floatChip} ${styles.chipSun}`} style={{ animationDelay: "1.4s" }}>
+            <Icon name="sunny" size={19} fill />
+            {t.hero.sunday}
+          </div>
         </div>
       </div>
 

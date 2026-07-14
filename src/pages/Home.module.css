@@ -226,6 +226,11 @@
   gap: 18px;
   margin-top: 30px;
 }
+.testiGoogle {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
 /* only the two arrow buttons are direct children of .testiNav;
    the pagination dots live inside .dots and must keep their own size */
 .testiNav > button {

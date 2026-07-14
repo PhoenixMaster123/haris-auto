@@ -10,7 +10,8 @@ import styles from "./Gallery.module.css";
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 type Filter = "all" | GalleryCategory;
-const FILTERS: Filter[] = ["all", "exterior", "workshop", "carpets"];
+/* only categories that actually have items get a button */
+const FILTERS: Filter[] = ["all", "ba", "exterior", "workshop", "carpets"];
 
 export function Gallery({ onNavigate }: { onNavigate: (p: PageId) => void }) {
   const { t } = useI18n();
@@ -43,6 +44,10 @@ export function Gallery({ onNavigate }: { onNavigate: (p: PageId) => void }) {
             </button>
           ))}
         </div>
+
+        {items.length === 0 && (
+          <p className={styles.empty}>{t.gallery.empty}</p>
+        )}
 
         <div className={styles.masonry} key={filter}>
           {items.map((g, i) => (

@@ -27,7 +27,7 @@ export function About({ onNavigate }: { onNavigate: (p: PageId) => void }) {
             <div
               className={styles.storyImg}
               style={{
-                backgroundImage: `linear-gradient(180deg, rgba(8,30,40,0.15) 0%, rgba(8,30,40,0.72) 100%), url(${asset("/media/car-done.jpg")})`,
+                backgroundImage: `linear-gradient(180deg, rgba(8,30,40,0.15) 0%, rgba(8,30,40,0.72) 100%), url(${asset("/media/boss-maschine.jpg")})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

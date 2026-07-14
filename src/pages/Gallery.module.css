@@ -31,6 +31,12 @@
   color: #fff;
 }
 
+.empty {
+  color: var(--t-2);
+  font-size: 1rem;
+  margin: 0 0 24px;
+}
+
 /* ---- masonry ---- */
 .masonry {
   display: grid;
