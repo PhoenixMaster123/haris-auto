@@ -17,12 +17,24 @@ interface I18nValue {
 
 const I18nContext = createContext<I18nValue | null>(null);
 
+/** Explicitly chosen language survives the visit (like the theme). */
+function storedLang(): Lang {
+  try {
+    const l = localStorage.getItem("lang");
+    if (l && l in dict) return l as Lang;
+  } catch {
+    /* noop */
+  }
+  return DEFAULT_LANG;
+}
+
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(DEFAULT_LANG);
+  const [lang, setLangState] = useState<Lang>(storedLang);
 
   const setLang = useCallback((l: Lang) => {
     setLangState(l);
     try {
+      localStorage.setItem("lang", l);
       document.documentElement.lang = l;
     } catch {
       /* noop */
