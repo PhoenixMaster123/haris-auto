@@ -3,9 +3,10 @@ import { useI18n } from "../hooks/useI18n";
 import { PHONE_TEL, FACEBOOK_URL, VIBER_URL, WHATSAPP_URL } from "../data";
 import { Icon } from "./Icon";
 import { BrandIcon, type BrandName } from "./BrandIcon";
-import { Logo } from "./Logo";
 import { OpenStatus } from "./OpenStatus";
 import styles from "./Footer.module.css";
+
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 interface Props {
   onNavigate: (p: PageId) => void;
@@ -27,8 +28,11 @@ export function Footer({ onNavigate }: Props) {
       <div className={`wrap ${styles.grid}`}>
         <div className={styles.brandCol}>
           <button className={styles.brandBtn} onClick={() => onNavigate("home")}>
-            <Logo />
-            <span className={styles.brandName}>ХАРИС</span>
+            <img
+              src={asset("/logo/haris-lockup.png")}
+              alt="Автокомплекс Харис"
+              className={styles.brandImg}
+            />
           </button>
           <p className={styles.desc}>{t.footer.desc}</p>
           <div className={styles.socials}>

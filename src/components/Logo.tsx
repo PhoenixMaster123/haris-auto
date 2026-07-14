@@ -1,24 +1,14 @@
-/** Compact "Х." monogram used in the nav and footer. */
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
+/** Circle-and-waves mark from the Haris logo, used in the nav. */
 export function Logo({ size = 42 }: { size?: number }) {
   return (
-    <span
-      style={{
-        width: size,
-        height: size,
-        borderRadius: 12,
-        background: "var(--ink)",
-        color: "#fff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: "var(--f-disp)",
-        fontWeight: 800,
-        fontSize: size * 0.55,
-        letterSpacing: "-0.02em",
-        flexShrink: 0,
-      }}
-    >
-      Х<span style={{ color: "var(--sun)" }}>.</span>
-    </span>
+    <img
+      src={asset("/logo/haris-mark.png")}
+      width={size}
+      height={size}
+      alt=""
+      style={{ display: "block", flexShrink: 0 }}
+    />
   );
 }

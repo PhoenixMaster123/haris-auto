@@ -10,6 +10,8 @@ import { OpenStatus } from "./OpenStatus";
 import { Logo } from "./Logo";
 import styles from "./Navbar.module.css";
 
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 interface Props {
   page: PageId;
   onNavigate: (p: PageId) => void;
@@ -88,9 +90,11 @@ export function Navbar({ page, onNavigate }: Props) {
       {mobileOpen && (
         <div className={styles.sheet}>
           <div className={styles.sheetTop}>
-            <span className={styles.brandName} style={{ color: "#fff" }}>
-              ХАРИС
-            </span>
+            <img
+              src={asset("/logo/haris-lockup.png")}
+              alt="Автокомплекс Харис"
+              className={styles.sheetLogo}
+            />
             <button
               className={styles.sheetClose}
               aria-label="Close"

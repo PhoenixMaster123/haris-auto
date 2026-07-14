@@ -124,6 +124,7 @@ export function Seo({ page }: { page: PageId }) {
       telephone: PHONE_TEL,
       email: EMAIL,
       image,
+      logo: `${origin}${base}logo/haris-logo-dark-cropped.png`,
       priceRange: "€€",
       currenciesAccepted: "EUR, BGN",
       address: {

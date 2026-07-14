@@ -161,6 +161,11 @@
   padding-inline: var(--gut);
   border-bottom: 1px solid var(--line-dark);
 }
+.sheetLogo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
 .sheetClose {
   width: 44px;
   height: 44px;
