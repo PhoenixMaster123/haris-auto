@@ -10,6 +10,7 @@ export const en: Strings = {
     about: "About",
     contact: "Contact",
     book: "Book now",
+    call: "Call us",
   },
   hero: {
     kicker: "Haris Auto Complex • Ruse • since 2003",
@@ -19,6 +20,7 @@ export const en: Strings = {
     cta1: "Book an appointment",
     cta2: "Our services",
     scroll: "Explore",
+    sunday: "Open on Sundays · 08:00 – 17:00",
   },
   why: {
     kicker: "Why Haris",
@@ -51,7 +53,11 @@ export const en: Strings = {
     after: "After",
     hint: "Drag",
   },
-  testi: { kicker: "Reviews", title: "What our customers say" },
+  testi: {
+    kicker: "Reviews",
+    title: "What our customers say",
+    google: "See all reviews on Google",
+  },
   brands: { title: "We work with all car makes" },
   galp: {
     kicker: "Gallery",
@@ -84,6 +90,7 @@ export const en: Strings = {
   gallery: {
     title: "Gallery",
     sub: "Detailing, interiors, the workshop and before/after results.",
+    empty: "No photos in this category yet.",
     filters: {
       all: "All",
       ba: "Before/After",
@@ -96,11 +103,11 @@ export const en: Strings = {
   },
   pricing: {
     title: "Pricing",
-    sub: "Transparent packages with no hidden fees. Prices shown are indicative.",
+    sub: "Transparent packages with no hidden fees — in euro and leva.",
     popular: "Most chosen",
     choose: "Choose",
     from: "from",
-    note: "Prices are indicative and include VAT. Contact us for an exact quote.",
+    note: "Prices are starting prices and include VAT. The final price is confirmed with you before any work begins — no surprises.",
   },
   about: {
     kicker: "About us",
@@ -140,7 +147,16 @@ export const en: Strings = {
     fServicePh: "— Choose a service —",
     fMessage: "Message",
     send: "Send enquiry",
-    success: "Thank you! We will get back to you as soon as possible.",
+    ready: "Your enquiry is ready to send",
+    readySub: "Choose how to send it to us — we reply quickly on Viber and WhatsApp.",
+    viberHint: "The message is copied automatically — paste it into the Viber chat.",
+    copyMsg: "Copy message",
+    copied: "Copied",
+    edit: "Back to the form",
+    msgHead: "Enquiry from the website",
+    msgService: "Service",
+    chatT: "Message us directly",
+    buildingNote: "This is our building — 2 Maria Luiza St, by the AutoBox sign.",
     infoT: "Contact information",
     addressL: "Address",
     address: "2 Maria Luiza St, 7012 Ruse",
@@ -154,7 +170,6 @@ export const en: Strings = {
       "Saturday: 08:00 – 17:00",
       "Sunday: 08:00 – 17:00",
     ],
-    socialT: "Follow us",
     emergencyT: "Emergency roadside",
   },
   faq: {
@@ -181,7 +196,6 @@ export const en: Strings = {
   footer: {
     desc: "Complete vehicle care in Ruse since 2003 — car wash, machine carpet cleaning, detailing and service.",
     links: "Quick links",
-    servicesL: "Services",
     contactL: "Contact",
     hoursL: "Opening hours",
     hours: [
@@ -190,10 +204,5 @@ export const en: Strings = {
       "Sunday: 08:00 – 17:00",
     ],
     rights: "All rights reserved.",
-    privacy: "Privacy",
-    terms: "Terms",
-    nl: "Newsletter",
-    nlph: "Your email",
-    nlbtn: "Subscribe",
   },
 };

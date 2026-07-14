@@ -123,27 +123,6 @@
   font-size: 0.85rem;
   color: var(--t-on-dark-3);
 }
-.legal {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.legal button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--t-on-dark-3);
-  font-size: 0.85rem;
-  font-family: inherit;
-  transition: color 0.2s var(--ease);
-}
-.legal button:hover {
-  color: var(--acc-bright);
-}
-.dot {
-  opacity: 0.5;
-}
-
 @media (max-width: 880px) {
   .grid {
     grid-template-columns: 1fr 1fr;

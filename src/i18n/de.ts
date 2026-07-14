@@ -10,6 +10,7 @@ export const de: Strings = {
     about: "Über uns",
     contact: "Kontakt",
     book: "Termin buchen",
+    call: "Anrufen",
   },
   hero: {
     kicker: "Autokomplex Haris • Ruse • seit 2003",
@@ -19,6 +20,7 @@ export const de: Strings = {
     cta1: "Termin vereinbaren",
     cta2: "Unsere Leistungen",
     scroll: "Entdecken",
+    sunday: "Auch sonntags geöffnet · 08:00 – 17:00",
   },
   why: {
     kicker: "Warum Haris",
@@ -51,7 +53,11 @@ export const de: Strings = {
     after: "Nachher",
     hint: "Ziehen",
   },
-  testi: { kicker: "Bewertungen", title: "Was unsere Kunden sagen" },
+  testi: {
+    kicker: "Bewertungen",
+    title: "Was unsere Kunden sagen",
+    google: "Alle Bewertungen auf Google ansehen",
+  },
   brands: { title: "Wir arbeiten mit allen Automarken" },
   galp: {
     kicker: "Galerie",
@@ -84,6 +90,7 @@ export const de: Strings = {
   gallery: {
     title: "Galerie",
     sub: "Detailing, Innenräume, die Werkstatt und Vorher-/Nachher-Ergebnisse.",
+    empty: "In dieser Kategorie gibt es noch keine Fotos.",
     filters: {
       all: "Alle",
       ba: "Vorher/Nachher",
@@ -96,11 +103,11 @@ export const de: Strings = {
   },
   pricing: {
     title: "Preise",
-    sub: "Transparente Pakete ohne versteckte Kosten. Die angezeigten Preise sind Richtwerte.",
+    sub: "Transparente Pakete ohne versteckte Kosten — in Euro und in Lewa.",
     popular: "Am beliebtesten",
     choose: "Wählen",
     from: "ab",
-    note: "Die Preise sind Richtwerte und inkl. MwSt. Kontaktieren Sie uns für ein genaues Angebot.",
+    note: "Die Preise sind Ab-Preise und inkl. MwSt. Der Endpreis wird vor Arbeitsbeginn mit Ihnen bestätigt — ohne Überraschungen.",
   },
   about: {
     kicker: "Über uns",
@@ -140,7 +147,16 @@ export const de: Strings = {
     fServicePh: "— Leistung auswählen —",
     fMessage: "Nachricht",
     send: "Anfrage senden",
-    success: "Vielen Dank! Wir melden uns so schnell wie möglich bei Ihnen.",
+    ready: "Ihre Anfrage ist versandbereit",
+    readySub: "Wählen Sie, wie Sie sie uns senden möchten — wir antworten schnell über Viber und WhatsApp.",
+    viberHint: "Die Nachricht wird automatisch kopiert — fügen Sie sie im Viber-Chat ein.",
+    copyMsg: "Nachricht kopieren",
+    copied: "Kopiert",
+    edit: "Zurück zum Formular",
+    msgHead: "Anfrage über die Website",
+    msgService: "Leistung",
+    chatT: "Schreiben Sie uns direkt",
+    buildingNote: "Das ist unser Gebäude — Maria-Luiza-Str. 2, beim AutoBox-Schild.",
     infoT: "Kontaktinformationen",
     addressL: "Adresse",
     address: "Maria-Luiza-Str. 2, 7012 Ruse",
@@ -154,7 +170,6 @@ export const de: Strings = {
       "Samstag: 08:00 – 17:00",
       "Sonntag: 08:00 – 17:00",
     ],
-    socialT: "Folgen Sie uns",
     emergencyT: "Pannenhilfe",
   },
   faq: {
@@ -181,7 +196,6 @@ export const de: Strings = {
   footer: {
     desc: "Komplette Fahrzeugpflege in Ruse seit 2003 — Autowäsche, maschinelle Teppichreinigung, Detailing und Service.",
     links: "Schnellzugriff",
-    servicesL: "Leistungen",
     contactL: "Kontakt",
     hoursL: "Öffnungszeiten",
     hours: [
@@ -190,10 +204,5 @@ export const de: Strings = {
       "Sonntag: 08:00 – 17:00",
     ],
     rights: "Alle Rechte vorbehalten.",
-    privacy: "Datenschutz",
-    terms: "AGB",
-    nl: "Newsletter",
-    nlph: "Ihre E-Mail",
-    nlbtn: "Abonnieren",
   },
 };

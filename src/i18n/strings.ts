@@ -11,6 +11,7 @@ export interface Strings {
     about: string;
     contact: string;
     book: string;
+    call: string;
   };
   hero: {
     kicker: string;
@@ -20,6 +21,7 @@ export interface Strings {
     cta1: string;
     cta2: string;
     scroll: string;
+    sunday: string;
   };
   why: {
     kicker: string;
@@ -37,7 +39,7 @@ export interface Strings {
     after: string;
     hint: string;
   };
-  testi: { kicker: string; title: string };
+  testi: { kicker: string; title: string; google: string };
   brands: { title: string };
   galp: { kicker: string; title: string; sub: string; view: string };
   cta: { title: string; sub: string; btn: string; call: string };
@@ -56,6 +58,7 @@ export interface Strings {
   gallery: {
     title: string;
     sub: string;
+    empty: string;
     filters: Record<
       "all" | "ba" | "detail" | "interior" | "exterior" | "workshop" | "carpets",
       string
@@ -93,7 +96,18 @@ export interface Strings {
     fServicePh: string;
     fMessage: string;
     send: string;
-    success: string;
+    /* compose-and-send panel (the site is static — the visitor sends
+       the prepared message through a channel of their choice) */
+    ready: string;
+    readySub: string;
+    viberHint: string;
+    copyMsg: string;
+    copied: string;
+    edit: string;
+    msgHead: string;
+    msgService: string;
+    chatT: string;
+    buildingNote: string;
     infoT: string;
     addressL: string;
     address: string;
@@ -103,23 +117,16 @@ export interface Strings {
     email: string;
     hoursL: string;
     hours: string[];
-    socialT: string;
     emergencyT: string;
   };
   faq: { title: string; items: { q: string; a: string }[] };
   footer: {
     desc: string;
     links: string;
-    servicesL: string;
     contactL: string;
     hoursL: string;
     hours: string[];
     rights: string;
-    privacy: string;
-    terms: string;
-    nl: string;
-    nlph: string;
-    nlbtn: string;
   };
 }
 

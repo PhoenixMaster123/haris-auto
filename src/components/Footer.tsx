@@ -1,7 +1,8 @@
 import type { PageId } from "../types";
 import { useI18n } from "../hooks/useI18n";
-import { PHONE_TEL, FACEBOOK_URL } from "../data";
+import { PHONE_TEL, FACEBOOK_URL, VIBER_URL, WHATSAPP_URL } from "../data";
 import { Icon } from "./Icon";
+import { BrandIcon, type BrandName } from "./BrandIcon";
 import { Logo } from "./Logo";
 import { OpenStatus } from "./OpenStatus";
 import styles from "./Footer.module.css";
@@ -10,10 +11,10 @@ interface Props {
   onNavigate: (p: PageId) => void;
 }
 
-const SOCIALS = [
+const SOCIALS: { icon?: string; brand?: BrandName; label: string; href: string }[] = [
   { icon: "public", label: "Facebook", href: FACEBOOK_URL },
-  { icon: "photo_camera", label: "Instagram", href: "#" },
-  { icon: "chat", label: "Viber", href: "#" },
+  { brand: "viber", label: "Viber", href: VIBER_URL },
+  { brand: "whatsapp", label: "WhatsApp", href: WHATSAPP_URL },
 ];
 
 export function Footer({ onNavigate }: Props) {
@@ -38,12 +39,17 @@ export function Footer({ onNavigate }: Props) {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  title={s.label}
                   className={styles.social}
                   {...(external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
                 >
-                  <Icon name={s.icon} size={20} />
+                  {s.brand ? (
+                    <BrandIcon name={s.brand} size={19} />
+                  ) : (
+                    <Icon name={s.icon!} size={20} />
+                  )}
                 </a>
               );
             })}
@@ -99,11 +105,6 @@ export function Footer({ onNavigate }: Props) {
           <span>
             © {year} Автокомплекс Харис. {t.footer.rights}
           </span>
-          <div className={styles.legal}>
-            <button>{t.footer.privacy}</button>
-            <span className={styles.dot}>•</span>
-            <button>{t.footer.terms}</button>
-          </div>
         </div>
       </div>
     </footer>

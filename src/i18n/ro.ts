@@ -10,6 +10,7 @@ export const ro: Strings = {
     about: "Despre noi",
     contact: "Contact",
     book: "Programează-te",
+    call: "Sună-ne",
   },
   hero: {
     kicker: "Complex auto Haris • Ruse • din 2003",
@@ -19,6 +20,7 @@ export const ro: Strings = {
     cta1: "Fă o programare",
     cta2: "Serviciile noastre",
     scroll: "Explorează",
+    sunday: "Deschis și duminica · 08:00 – 17:00",
   },
   why: {
     kicker: "De ce Haris",
@@ -51,7 +53,11 @@ export const ro: Strings = {
     after: "După",
     hint: "Trage",
   },
-  testi: { kicker: "Recenzii", title: "Ce spun clienții noștri" },
+  testi: {
+    kicker: "Recenzii",
+    title: "Ce spun clienții noștri",
+    google: "Vezi toate recenziile pe Google",
+  },
   brands: { title: "Lucrăm cu toate mărcile de mașini" },
   galp: {
     kicker: "Galerie",
@@ -84,6 +90,7 @@ export const ro: Strings = {
   gallery: {
     title: "Galerie",
     sub: "Detailing, interioare, atelierul și rezultate înainte/după.",
+    empty: "Nu există încă fotografii în această categorie.",
     filters: {
       all: "Toate",
       ba: "Înainte/După",
@@ -96,11 +103,11 @@ export const ro: Strings = {
   },
   pricing: {
     title: "Prețuri",
-    sub: "Pachete transparente, fără taxe ascunse. Prețurile afișate sunt orientative.",
+    sub: "Pachete transparente, fără taxe ascunse — în euro și în leva.",
     popular: "Cel mai ales",
     choose: "Alege",
     from: "de la",
-    note: "Prețurile sunt orientative și includ TVA. Contactează-ne pentru o ofertă exactă.",
+    note: "Prețurile sunt de pornire și includ TVA. Prețul final se confirmă cu tine înainte de începerea lucrării — fără surprize.",
   },
   about: {
     kicker: "Despre noi",
@@ -140,7 +147,16 @@ export const ro: Strings = {
     fServicePh: "— Alege un serviciu —",
     fMessage: "Mesaj",
     send: "Trimite cererea",
-    success: "Mulțumim! Te vom contacta cât mai curând posibil.",
+    ready: "Cererea ta este gata de trimis",
+    readySub: "Alege cum să ne-o trimiți — răspundem rapid pe Viber și WhatsApp.",
+    viberHint: "Mesajul se copiază automat — lipește-l în conversația Viber.",
+    copyMsg: "Copiază mesajul",
+    copied: "Copiat",
+    edit: "Înapoi la formular",
+    msgHead: "Cerere de pe site",
+    msgService: "Serviciu",
+    chatT: "Scrie-ne direct",
+    buildingNote: "Aceasta este clădirea noastră — str. Maria Luiza 2, lângă panoul AutoBox.",
     infoT: "Informații de contact",
     addressL: "Adresă",
     address: "str. „Maria Luiza“ 2, 7012 Ruse",
@@ -154,7 +170,6 @@ export const ro: Strings = {
       "Sâmbătă: 08:00 – 17:00",
       "Duminică: 08:00 – 17:00",
     ],
-    socialT: "Urmărește-ne",
     emergencyT: "Asistență rutieră de urgență",
   },
   faq: {
@@ -181,7 +196,6 @@ export const ro: Strings = {
   footer: {
     desc: "Îngrijire completă a vehiculelor în Ruse din 2003 — spălătorie auto, curățare mecanică a covoarelor, detailing și service.",
     links: "Linkuri rapide",
-    servicesL: "Servicii",
     contactL: "Contact",
     hoursL: "Program",
     hours: [
@@ -190,10 +204,5 @@ export const ro: Strings = {
       "Duminică: 08:00 – 17:00",
     ],
     rights: "Toate drepturile rezervate.",
-    privacy: "Confidențialitate",
-    terms: "Termeni",
-    nl: "Newsletter",
-    nlph: "Emailul tău",
-    nlbtn: "Abonează-te",
   },
 };
