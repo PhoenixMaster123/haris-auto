@@ -1,9 +1,10 @@
 import { Icon } from "./Icon";
 import { useI18n, useLocalized } from "../hooks/useI18n";
 import type { Service } from "../types";
+import { bgnPrice } from "../data";
 import styles from "./Cards.module.css";
 
-/** Euro price tag, e.g. €18 */
+/** Dual-display price tag for the euro changeover, e.g. €18 · 35,20 лв. */
 export function Price({
   amount,
   size = 21,
@@ -19,6 +20,9 @@ export function Price({
         €
       </span>
       <span style={{ fontSize: size }}>{amount}</span>
+      <span className={styles.bgn} style={{ fontSize: Math.max(12, size * 0.3) }}>
+        {bgnPrice(amount)}
+      </span>
     </span>
   );
 }
