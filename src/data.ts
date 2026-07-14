@@ -18,6 +18,18 @@ export const PHONE_DISPLAY = "+359 89 687 7995";
 export const PHONE_TEL = "+359896877995";
 export const EMAIL = "avtokomfort@abv.bg";
 export const FACEBOOK_URL = "https://www.facebook.com/AvtokompleksHaris";
+/** Opens a Viber chat with the shop. Viber deep links cannot prefill text. */
+export const VIBER_URL = "viber://chat?number=%2B359896877995";
+export const WHATSAPP_URL = "https://wa.me/359896877995";
+/** WhatsApp chat with a prefilled message. */
+export const whatsappUrl = (text: string) =>
+  `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
+/** The business's original site — kept as an official profile reference. */
+export const OFFICIAL_SITE_URL = "https://harisauto.net/";
+/** Resolves to the shop's Google Maps listing (reviews live there). */
+export const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=" +
+  encodeURIComponent('Автокомплекс Харис, ул. "Мария Луиза" 2, Русе');
 
 // ---- Business identity (for SEO / structured data) -------------
 export const ADDRESS = {
@@ -26,8 +38,20 @@ export const ADDRESS = {
   postalCode: "7012",
   country: "BG",
 };
-/** Approximate Ruse coordinates — refine with the exact Google Maps pin. */
-export const GEO = { lat: 43.8356, lng: 25.9657 };
+/** Exact pin taken from the directions link on harisauto.net/contact. */
+export const GEO = { lat: 43.84, lng: 25.9492 };
+
+// ---- Currency ---------------------------------------------------
+/** Official fixed conversion rate for Bulgaria's euro changeover. */
+export const EUR_BGN = 1.95583;
+/**
+ * Dual-display companion price, e.g. "35,20 лв." for €18.
+ * Bulgarian format: comma decimals, always two digits, nbsp before лв.
+ */
+export function bgnPrice(eur: string): string {
+  const lv = Math.round(parseFloat(eur) * EUR_BGN * 100) / 100;
+  return `${lv.toFixed(2).replace(".", ",")} лв.`;
+}
 
 // ---- Opening hours --------------------------------------------
 /**
@@ -405,6 +429,42 @@ export const gallery: GalleryItem[] = [
     img: "/media/car-wash.jpg",
   },
   // ---- remaining gallery-only tiles ----
+  {
+    cat: "ba",
+    tall: true,
+    label: L(
+      "Димност 4.30 → 1.72 след водородно почистване",
+      "Smoke opacity 4.30 → 1.72 after hydrogen cleaning",
+      "Opacitate fum 4.30 → 1.72 după curățarea cu hidrogen",
+      "Rauchtrübung 4.30 → 1.72 nach Wasserstoffreinigung",
+    ),
+    grad: "linear-gradient(135deg,#191c22,#2a2f37)",
+    img: "/media/hydrogen-cleaning2.jpg",
+  },
+  {
+    cat: "ba",
+    tall: true,
+    label: L(
+      "Водородно почистване — клапани, свещи и бутала",
+      "Hydrogen cleaning — valves, plugs and pistons",
+      "Curățare cu hidrogen — supape, bujii și pistoane",
+      "Wasserstoffreinigung — Ventile, Kerzen und Kolben",
+    ),
+    grad: "linear-gradient(135deg,#0f1115,#2b3138)",
+    img: "/media/hydrogen-cleaning-before-after.jpg",
+  },
+  {
+    cat: "workshop",
+    tall: false,
+    label: L(
+      "Машини за климатици и автоматични кутии",
+      "A/C and automatic-gearbox service machines",
+      "Utilaje pentru climatizare și cutii automate",
+      "Maschinen für Klima- und Automatikgetriebeservice",
+    ),
+    grad: "linear-gradient(135deg,#1b1e24,#33383f)",
+    img: "/media/boss-maschine.jpg",
+  },
   {
     cat: "workshop",
     tall: false,
