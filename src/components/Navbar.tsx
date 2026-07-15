@@ -132,8 +132,7 @@ export function Navbar({ page, onNavigate }: Props) {
               </a>
             </div>
             <button
-              className="btn btn--sun"
-              style={{ marginTop: 8, width: "100%", padding: "16px" }}
+              className={`btn btn--sun ${styles.sheetBook}`}
               onClick={() => go("contact")}
             >
               <Icon name="event" size={20} />

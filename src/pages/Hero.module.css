@@ -306,18 +306,24 @@
     padding-bottom: 72px;
     min-height: auto;
   }
+  /* stacked layout: the chips leave the video overlay (where the long
+     Sunday text collides with the badge and caption) and flow as pills
+     under the card instead */
   .media {
     max-width: 420px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .videoCard {
+    flex: 1 1 100%;
   }
   .floatChip {
-    right: 14px;
-    bottom: 14px;
+    position: static;
+    white-space: normal;
+    animation: none;
     font-size: 0.8rem;
     padding: 9px 14px;
-  }
-  .chipSun {
-    top: 14px;
-    bottom: auto;
   }
   .scroll {
     display: none;

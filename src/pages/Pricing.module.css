@@ -1,5 +1,7 @@
 .body {
-  padding: 64px 0 96px;
+  /* padding-block only — the element also carries .wrap, whose
+     side gutters a `padding` shorthand would wipe out */
+  padding-block: 64px 96px;
 }
 
 /* ---- pricing grid ---- */

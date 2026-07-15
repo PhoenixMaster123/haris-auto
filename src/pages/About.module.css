@@ -1,5 +1,7 @@
 .body {
-  padding: 72px 0 0;
+  /* padding-block only — the element also carries .wrap, whose
+     side gutters a `padding` shorthand would wipe out */
+  padding-block: 72px 0;
 }
 .blockTitle {
   font-family: var(--f-disp);
