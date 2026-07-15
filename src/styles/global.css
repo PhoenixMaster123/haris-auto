@@ -180,6 +180,11 @@ a {
 .eyebrow.on-dark {
   color: var(--acc-bright);
 }
+/* dark theme puts every section on a dark surface, where the
+   light-surface teal fails WCAG contrast */
+:root[data-theme="dark"] .eyebrow {
+  color: var(--acc-bright);
+}
 
 /* section headings: condensed uppercase, like local signage */
 .h-sec {

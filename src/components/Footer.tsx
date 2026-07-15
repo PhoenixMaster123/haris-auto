@@ -61,7 +61,7 @@ export function Footer({ onNavigate }: Props) {
         </div>
 
         <div className={styles.col}>
-          <h4 className={styles.colTitle}>{t.footer.links}</h4>
+          <h3 className={styles.colTitle}>{t.footer.links}</h3>
           <ul className={styles.list}>
             {quick.map((p) => (
               <li key={p}>
@@ -72,7 +72,7 @@ export function Footer({ onNavigate }: Props) {
         </div>
 
         <div className={styles.col}>
-          <h4 className={styles.colTitle}>{t.footer.contactL}</h4>
+          <h3 className={styles.colTitle}>{t.footer.contactL}</h3>
           <ul className={styles.list}>
             <li className={styles.contactItem}>
               <Icon name="call" size={18} />
@@ -90,7 +90,7 @@ export function Footer({ onNavigate }: Props) {
         </div>
 
         <div className={styles.col}>
-          <h4 className={styles.colTitle}>{t.footer.hoursL}</h4>
+          <h3 className={styles.colTitle}>{t.footer.hoursL}</h3>
           <div className={styles.statusRow}>
             <OpenStatus />
           </div>

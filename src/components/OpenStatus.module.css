@@ -29,12 +29,17 @@
 .closed .dot {
   background: #e05a45;
 }
+/* Hosts on always-dark surfaces (footer, mobile sheet) set --status-ok
+   to the bright green; the fallback is dark enough for light surfaces. */
 .open .label {
-  color: #16a85c;
+  color: var(--status-ok, #0f8049);
+}
+:root[data-theme="dark"] .open .label {
+  color: var(--status-ok, #2fc57e);
 }
 .detail {
   font-weight: 600;
-  opacity: 0.66;
+  opacity: 0.8;
 }
 
 @keyframes openPulse {

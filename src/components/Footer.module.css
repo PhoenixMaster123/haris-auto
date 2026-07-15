@@ -107,6 +107,8 @@
 }
 .statusRow {
   margin-bottom: 16px;
+  /* the footer is dark in both themes */
+  --status-ok: #2fc57e;
 }
 
 .bottom {

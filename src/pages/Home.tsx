@@ -223,7 +223,7 @@ export function Home({ onNavigate }: { onNavigate: (p: PageId) => void }) {
                   <img
                     className={styles.galVideo}
                     src={asset(g.img)}
-                    alt={L(g.label)}
+                    alt=""
                     loading="lazy"
                     onError={(e) => {
                       e.currentTarget.style.display = "none";

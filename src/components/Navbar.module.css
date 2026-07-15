@@ -215,6 +215,10 @@
 }
 .sheetStatus {
   margin-top: 22px;
+  /* the sheet is dark in both themes; without this the badge inherits
+     the light theme's navy text and vanishes */
+  color: var(--t-on-dark-2);
+  --status-ok: #2fc57e;
 }
 .sheetLang {
   margin-top: 18px;

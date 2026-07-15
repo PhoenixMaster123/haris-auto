@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "npm run lint && npm run build",
+    "smoke": "node .claude/skills/run-haris-auto/driver.mjs smoke",
+    "lighthouse": "npx --yes @lhci/cli autorun --config=lighthouserc.json"
   },
   "dependencies": {
     "react": "^19.2.7",

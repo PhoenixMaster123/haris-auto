@@ -60,7 +60,7 @@ export function Gallery({ onNavigate }: { onNavigate: (p: PageId) => void }) {
                 <img
                   className={styles.photo}
                   src={asset(g.img)}
-                  alt={L(g.label)}
+                  alt=""
                   loading="lazy"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";

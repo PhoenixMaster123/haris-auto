@@ -1,8 +1,14 @@
-name: Deploy to GitHub Pages
+name: CI & Deploy
+
+# Pipeline: lint + typecheck -> production build -> smoke test (the site
+# actually boots: assets, console errors, i18n, mobile menu) -> Lighthouse
+# budget (perf / a11y / SEO). Only when everything is green does a push to
+# main get deployed to GitHub Pages. Pull requests run the checks only.
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.
@@ -11,13 +17,103 @@ permissions:
   pages: write
   id-token: write
 
-# Only one Pages deploy at a time; don't cancel an in-progress one.
+# Cancel superseded runs of the same PR; never cancel a main run
+# (a Pages deploy could be in flight).
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  build:
+  quality:
+    name: Lint, typecheck & build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint (oxlint)
+        run: npm run lint
+
+      - name: Typecheck + production build
+        run: npm run build
+
+      # The dist below is base '/' (no GITHUB_PAGES), so the smoke and
+      # Lighthouse jobs can serve it from localhost.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+  smoke:
+    name: Smoke test (production build)
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Install Playwright Chromium
+        run: |
+          npm i --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Serve dist and run the smoke driver
+        run: |
+          npx vite preview --port 4173 --strictPort &
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:4173/ >/dev/null && break
+            sleep 1
+          done
+          node .claude/skills/run-haris-auto/driver.mjs smoke --url http://localhost:4173/
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-screenshots
+          path: .claude/skills/run-haris-auto/shots
+          if-no-files-found: ignore
+
+  lighthouse:
+    name: Lighthouse budget (perf, a11y, SEO)
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      # Serves dist statically and asserts the budgets in lighthouserc.json.
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: lighthouserc.json
+          uploadArtifacts: true
+
+  pages-build:
+    name: Build for GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: [quality, smoke, lighthouse]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,7 +128,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          GITHUB_PAGES: 'true' # makes vite.config use base '/Haris-Auto/'
+          GITHUB_PAGES: 'true' # makes vite.config use base '/haris-auto/'
 
       - uses: actions/configure-pages@v5
 
@@ -41,8 +137,14 @@ jobs:
           path: dist
 
   deploy:
-    needs: build
+    name: Deploy to GitHub Pages
+    if: github.event_name != 'pull_request'
+    needs: pages-build
     runs-on: ubuntu-latest
+    # Only one Pages deploy at a time; don't cancel an in-progress one.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
